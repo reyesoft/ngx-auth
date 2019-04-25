@@ -9,11 +9,12 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { MediaObserver } from '@angular/flex-layout';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ForgotpassService } from './forgot-password.service';
+import { ForgotPasswordService } from './forgot-password.service';
 
 @Component({
     selector: 'auth-forgot-password',
-    templateUrl: './forgot-password.component.html'
+    templateUrl: './forgot-password.component.html',
+    styleUrls: ['./forgot-password.component.scss']
 })
 export class ForgotPasswordComponent implements OnInit {
     public user = { email: '' };
@@ -24,7 +25,7 @@ export class ForgotPasswordComponent implements OnInit {
 
     public constructor(
         public ngZone: NgZone,
-        protected forgotpassService: ForgotpassService,
+        protected forgotPasswordService: ForgotPasswordService,
         private router: Router,
         public mediaObserver: MediaObserver
     ) {}
@@ -37,17 +38,17 @@ export class ForgotPasswordComponent implements OnInit {
 
     public cancel() {
         this.router.navigate(
-            [this.forgotpassService.authConfig.routes.login.route],
-            {queryParams: this.forgotpassService.authConfig.routes.login.query_params}
+            [this.forgotPasswordService.authConfig.routes.login.route],
+            {queryParams: this.forgotPasswordService.authConfig.routes.login.query_params}
         );
     }
 
     public sendEmail() {
-        this.forgotpassService.reset(this.forgotPassForm.controls.email.value).subscribe(res => {
+        this.forgotPasswordService.reset(this.forgotPassForm.controls.email.value).subscribe(res => {
             this.ngZone.run(
                 () => this.router.navigate(
-                    [this.forgotpassService.authConfig.routes.forgot_password_redirection.route],
-                    {queryParams: this.forgotpassService.authConfig.routes.forgot_password_redirection.query_params}
+                    [this.forgotPasswordService.authConfig.routes.forgot_password_redirection.route],
+                    {queryParams: this.forgotPasswordService.authConfig.routes.forgot_password_redirection.query_params}
                 )
             );
         });

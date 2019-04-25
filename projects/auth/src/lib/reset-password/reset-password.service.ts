@@ -5,17 +5,27 @@
  * distributed without the express permission of Reyesoft
  */
 
-import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthConfig } from '../auth-config';
+import { Injectable, Inject } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class ResetPasswordService {
-    public constructor(protected http: HttpClient) {}
+    public constructor(
+        protected http: HttpClient,
+        @Inject('authConfig') public authConfig: AuthConfig
+    ) {}
 
-    public reset(resetPassword) {
+    public reset(resetPassword: {password: string; repeatPassword: string; activationCode: string}): Observable<any> {
+        if (!this.authConfig.api || !this.authConfig.api.reset_password_url.route) {
+            return throwError(
+                'You must provide "reset_password_url" configuration when importing AuthModule in your application'
+            );
+        }
+
         return this.http.post(
-            environment.APIURL + 'users/password_reset_request',
+            this.authConfig.api.reset_password_url.route,
             'password=' +
                 resetPassword.password +
                 '&repeat_password=' +

@@ -105,11 +105,19 @@
     "@angular-devkit/core" "7.1.4"
     rxjs "6.3.3"
 
-"@angular/animations@~7.1.0":
-  version "7.1.4"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.1.4.tgz#6c1ca6b8449bb0fa874343371961fccbe19791bc"
+"@angular/animations@^7.2.14":
+  version "7.2.14"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.14.tgz#06ec2feac31e58f53429e673bc4c7f780a9d0710"
   dependencies:
     tslib "^1.9.0"
+
+"@angular/cdk@^7.3.7":
+  version "7.3.7"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-7.3.7.tgz#ce1ad53ba04beb9c8e950acc5691ea0143753764"
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
 
 "@angular/cli@~7.1.4":
   version "7.1.4"
@@ -3830,6 +3838,12 @@ license-webpack-plugin@2.0.2:
   dependencies:
     webpack-sources "^1.2.0"
 
+lie@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
+  dependencies:
+    immediate "~3.0.5"
+
 lie@~3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/lie/-/lie-3.3.0.tgz#dcf82dee545f46074daf200c7c1c5a08e0f40f6a"
@@ -3883,6 +3897,18 @@ loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
     big.js "^5.2.2"
     emojis-list "^2.0.0"
     json5 "^1.0.1"
+
+localforage-getitems@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/localforage-getitems/-/localforage-getitems-1.4.2.tgz#bddd3e716e7df339dc5a5cc26e2dd1decec76606"
+  dependencies:
+    localforage ">=1.4.0"
+
+localforage@>=1.4.0, localforage@^1.5.2:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.7.3.tgz#0082b3ca9734679e1bd534995bdd3b24cf10f204"
+  dependencies:
+    lie "3.1.1"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -4357,6 +4383,25 @@ ng-packagr@^4.2.0:
     stylus "^0.54.5"
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
+
+ngx-jsonapi-material@^0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/ngx-jsonapi-material/-/ngx-jsonapi-material-0.0.22.tgz#a5de1b61f2558c17f3d30482de58dc117604511f"
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-jsonapi@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-jsonapi/-/ngx-jsonapi-2.0.2.tgz#6bfaf01700053285109b8bc23873e0098be0381c"
+  dependencies:
+    localforage "^1.5.2"
+    localforage-getitems "^1.4.2"
+
+ngx-uploader@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-uploader/-/ngx-uploader-7.1.0.tgz#0da19acafb97ad1e22e512a13d9ebae025db85f7"
+  dependencies:
+    tslib "^1.9.0"
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -4879,6 +4924,10 @@ parse-json@^4.0.0:
 parse5@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
+
+parse5@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
 
 parseqs@0.0.5:
   version "0.0.5"
@@ -5650,6 +5699,12 @@ sass-loader@7.1.0:
     neo-async "^2.5.0"
     pify "^3.0.0"
     semver "^5.5.0"
+
+saturn-datepicker@^7.2.1:
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/saturn-datepicker/-/saturn-datepicker-7.2.1.tgz#962fa8bc5bced1d3c7cafb8b25b98ac10a58f634"
+  dependencies:
+    tslib "^1.9.0"
 
 saucelabs@^1.5.0:
   version "1.5.0"

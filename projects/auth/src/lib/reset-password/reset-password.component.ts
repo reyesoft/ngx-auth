@@ -6,19 +6,16 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { ObservableMedia } from '@angular/flex-layout';
+import { MediaObserver } from '@angular/flex-layout';
 import { Router, UrlTree } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ResetPasswordService } from './reset-password.service';
 import { GuestStartService } from '../guest-start/services/guest-start.service';
-import { GlobalStateService } from '@shared/services/global-state.service';
-import { CompaniesService } from '@shared/services/companies/companies.service';
-import { RequestStatusService } from '@app/shared/services/request-status.service';
-import { NgxNamedRoutesService } from 'ngx-named-routes';
 
 @Component({
-    selector: 'app-reset-password',
-    templateUrl: './reset-password.component.html'
+    selector: 'auth-reset-password',
+    templateUrl: './reset-password.component.html',
+    styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
     public resetPassForm: FormGroup;
@@ -26,14 +23,10 @@ export class ResetPasswordComponent implements OnInit {
     public user_login: { email?: string; password?: string } = {};
 
     public constructor(
-        public mediaQuery: ObservableMedia,
+        public mediaObserver: MediaObserver,
         protected resetPasswordService: ResetPasswordService,
         protected router: Router,
-        protected globalStateService: GlobalStateService,
-        protected requestStatusService: RequestStatusService,
-        protected loginService: GuestStartService,
-        protected ngxNamedRoutesService: NgxNamedRoutesService,
-        protected companiesService: CompaniesService // protected store, Habilitar cuando se implemente Redux, ngrx store o alguna otra solución
+        protected guestStartService: GuestStartService,
     ) {}
 
     public ngOnInit() {
@@ -42,20 +35,16 @@ export class ResetPasswordComponent implements OnInit {
             repeatPassword: new FormControl('', [Validators.required]),
             activationCode: new FormControl()
         });
-        let searchObject: UrlTree = this.router.parseUrl(this.router.url);
+        const searchObject: UrlTree = this.router.parseUrl(this.router.url);
         // Pasamos el parametro obtenido por GET.
         this.resetPassForm.controls.activationCode.setValue(searchObject.queryParams.activation_code);
         this.user_login.email = searchObject.queryParams.email;
-
-        this.requestStatusService.setForm(this.resetPassForm);
     }
 
     public sendResetPassword() {
         this.user_login.password = this.resetPassForm.controls.password.value;
         this.resetPasswordService.reset(this.resetPassForm.value).subscribe(res => {
-            this.loginService.oAuthLogin(this.user_login).then(() => {
-                this.router.navigate([this.ngxNamedRoutesService.getRoute('companies.select-company')]);
-            });
+            this.guestStartService.oAuthLogin(this.user_login);
         });
     }
 }

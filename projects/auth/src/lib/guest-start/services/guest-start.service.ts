@@ -5,16 +5,16 @@
  * distributed without the express permission of Reyesoft
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { AuthConfig } from 'projects/auth/src/lib/auth.module';
+import { AuthConfig } from '../../auth-config';
 import { OAuthService } from 'angular-oauth2-oidc';
 
 @Injectable()
 export class GuestStartService {
     public constructor(
-        public authConfig: AuthConfig,
         private oAuthService: OAuthService,
+        @Inject('authConfig') public authConfig: AuthConfig
     ) {}
 
     public oAuthLogin(user): void {

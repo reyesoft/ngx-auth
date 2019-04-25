@@ -7,7 +7,6 @@ import { GuestStartService } from '../services/guest-start.service';
 import { LowerCasePipe } from '@angular/common';
 import { Router, UrlTree } from '@angular/router';
 import { User } from './user';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { OAuthService } from 'angular-oauth2-oidc';
 
 // ngx-formly
@@ -34,7 +33,6 @@ export class LoginComponent {
     public constructor(
         protected lowercase: LowerCasePipe,
         private guestStartService: GuestStartService,
-        protected jwtHelperService: JwtHelperService,
         protected router: Router,
         public oAuthService: OAuthService,
         public mediaObserver: MediaObserver

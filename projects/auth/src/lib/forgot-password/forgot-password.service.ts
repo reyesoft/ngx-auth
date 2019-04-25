@@ -7,20 +7,20 @@
 
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AuthConfig } from '../auth.module';
+import { AuthConfig } from '../auth-config';
 import { Observable, throwError } from 'rxjs';
 
 @Injectable()
-export class ForgotpassService {
+export class ForgotPasswordService {
     public constructor(
         protected http: HttpClient,
-        @Inject('config') public authConfig: AuthConfig
+        @Inject('authConfig') public authConfig: AuthConfig
     ) {}
 
     public reset(query_parameters: {[key: string]: any}): Observable<any> {
-        if (!this.authConfig.api || !this.authConfig.api.reset_password_url.route) {
+        if (!this.authConfig.api || !this.authConfig.api.forgot_password_url.route) {
             return throwError(
-                'You must provide "reset_password_url" configuration when importing AuthModule in your application'
+                'You must provide "forgot_password_url" configuration when importing AuthModule in your application'
             );
         }
 
@@ -33,7 +33,7 @@ export class ForgotpassService {
         }
 
         return this.http.post(
-            this.authConfig.api.reset_password_url.route,
+            this.authConfig.api.forgot_password_url.route,
             body,
             {
                 headers: new HttpHeaders('Content-Type: application/x-www-form-urlencoded')

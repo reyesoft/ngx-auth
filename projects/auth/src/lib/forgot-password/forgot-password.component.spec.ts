@@ -1,7 +1,7 @@
 // "src/app/guest/forgot-password/forgot-password",
 import { async, fakeAsync, tick, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { AuthConfig } from 'projects/auth/src/lib/auth.module';
-import { ForgotpassService } from './forgot-password.service';
+import { ForgotPasswordService } from './forgot-password.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dialog';
@@ -22,7 +22,7 @@ function newEvent(eventName: string, bubbles = false, cancelable = false) {
     return evt;
 }
 
-const ForgotpassServiceMock = mock(ForgotpassService);
+const ForgotPasswordServiceMock = mock(ForgotPasswordService);
 class ObservableMediaMock {
     public constructor() {
         /**/
@@ -52,7 +52,7 @@ describe('ForgotPasswordComponent', () => {
                     }
                 }},
                 { provide: MediaObserver, useValue: new ObservableMediaMock() },
-                { provide: ForgotpassService, useFactory: (): ForgotpassService => instance(ForgotpassServiceMock) }
+                { provide: ForgotPasswordService, useFactory: (): ForgotPasswordService => instance(ForgotPasswordServiceMock) }
             ]
         }).compileComponents();
     });
