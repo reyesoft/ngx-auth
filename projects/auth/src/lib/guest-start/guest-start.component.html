@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutAlign.gt-sm="center center" fxLaoyutAlign.lt-md="center start" class="width-100 height-100">
+    <div
+        fxFlex.gt-sm="500px"
+        fxFlex.lt.md="100"
+        fxLayout.sm="column"
+        fxLayoutAlign.lt-md="start stretch"
+        class="mobile-full-screen"
+        [ngClass]="!mediaObserver.isActive('xs') && !mediaObserver.isActive('xs') ? 'mat-elevation-z2' : ''"
+        >
+        <mat-tab-group
+            headerPosition="below"
+            mat-stretch-tabs
+            class="background-white tab-header-bottom"
+            appTabs
+            [tabNames]="tab_names"
+            [tabGroup]="tabGroup"
+            dynamicHeight
+            #tabGroup
+            fxLaoyutAlign="stretch stretch"
+            >
+            <mat-tab label="Iniciar Sesión">
+                <app-login></app-login>
+            </mat-tab>
+            <mat-tab label="Regístrate">
+                <app-sign-up></app-sign-up>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+$login-link: #000000b3;
+
+/deep/ dynamic-material-form .mat-form-field {
+    width: 100%;
+}
+
+a:hover {
+    color: $login-link;
+}
