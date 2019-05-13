@@ -36,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             forgot_password_redirection: {route: 'aaaaaa'},
             reset_password: {route: 'aaaaaa'},
         },
-        afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('data ----------->', data); },
+        afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('login data ----------->', data); },
+        afterOAuthRefreshMethod: (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); },
         registerUser: (data) => { console.log('data ----------->', data); },
         main_image_url: 'https://es.freelogodesign.org/Content/img/logo-ex-7.png'
     })
