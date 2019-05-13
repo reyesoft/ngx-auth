@@ -26,9 +26,9 @@ export class SignUpComponent {
 
     public constructor(
         public mediaObserver: MediaObserver,
-        protected guestStartService: GuestStartService,
-        protected lowercase: LowerCasePipe,
-        protected router: Router
+        public guestStartService: GuestStartService,
+        public lowercase: LowerCasePipe,
+        public router: Router
     ) {}
 
     public registerUser(): void {
