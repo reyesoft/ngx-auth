@@ -1,12 +1,14 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { OAuthInterceptor } from './oauth-interceptor';
 import { RouterModule } from '@angular/router';
-import { AuthFormlyFormFlexLayoutComponent } from 'projects/auth/src/lib/dynamic-forms/formly-form-flex.component';
-import { AuthMaterialModule } from 'projects/auth/src/lib/auth-material.module';
-import { JsonapiMaterialModule } from 'projects/auth/src/lib/jsonapi-material.module';
-import { AuthConfig } from 'projects/auth/src/lib/auth-config';
-import { ForgotPasswordService } from 'projects/auth/src/lib/forgot-password/forgot-password.service';
-import { ResetPasswordService } from 'projects/auth/src/lib/reset-password/reset-password.service';
-import { GuestStartService } from 'projects/auth/src/lib/guest-start/services/guest-start.service';
+import { AuthFormlyFormFlexLayoutComponent } from './dynamic-forms/formly-form-flex.component';
+import { AuthMaterialModule } from './auth-material.module';
+import { JsonapiMaterialModule } from './jsonapi-material.module';
+import { AuthConfig, AuthMethodsConfig } from './auth-config';
+import { ForgotPasswordService } from './forgot-password/forgot-password.service';
+import { ResetPasswordService } from './reset-password/reset-password.service';
+import { GuestStartService } from './guest-start/services/guest-start.service';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './guest-start/login/login.component';
 import { SignUpComponent } from './guest-start/sign-up/sign-up.component';
@@ -23,11 +25,10 @@ import { OAuthService } from 'angular-oauth2-oidc';
 @NgModule({
     declarations: [
         GuestStartComponent,
+        ForgotPasswordComponent,
         ResetPasswordComponent,
         SignUpComponent,
         LoginComponent,
-        ForgotPasswordComponent,
-        // AuthConfig,
         // TODO: remove and import from ngx-jsonapi-material when supported
         AuthFormlyFormFlexLayoutComponent
     ],
@@ -51,22 +52,19 @@ import { OAuthService } from 'angular-oauth2-oidc';
         GuestStartService,
         ResetPasswordService,
         ForgotPasswordService,
-        // OAuthService,
+        AuthMethodsConfig,
         LowerCasePipe
     ],
     exports: [
-        GuestStartComponent,
-        ResetPasswordComponent,
         SignUpComponent,
         LoginComponent,
-        // AuthConfig,
+        GuestStartComponent,
+        ResetPasswordComponent,
         ForgotPasswordComponent
     ]
 })
 export class AuthModule {
     static forRoot(authConfig: AuthConfig): ModuleWithProviders {
-        // User authConfig get logged here
-        console.log('authConfig -------->', authConfig);
         return {
             ngModule: AuthModule,
             providers: [

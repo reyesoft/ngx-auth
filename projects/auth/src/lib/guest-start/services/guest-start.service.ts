@@ -7,18 +7,19 @@
 
 import { Injectable, Inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { AuthConfig } from '../../auth-config';
+import { AuthConfig, AuthMethodsConfig } from '../../auth-config';
 import { OAuthService } from 'angular-oauth2-oidc';
 
 @Injectable()
 export class GuestStartService {
     public constructor(
+        private authMethodsConfig: AuthMethodsConfig,
         private oAuthService: OAuthService,
         @Inject('authConfig') public authConfig: AuthConfig
     ) {}
 
     public oAuthLogin(user): void {
-        if (!this.authConfig.afterOAuthLoginMethod) {
+        if (!this.authMethodsConfig.afterOAuthLoginMethod) {
             throw(new Error('You must provide a login redirection method when importign AuthModule in your application'));
         }
 
@@ -26,12 +27,13 @@ export class GuestStartService {
         this.oAuthService.fetchTokenUsingPasswordFlow(user.email, user.password)
             .then(
                 (data: {[key: string]: any}) => {
-                    this.authConfig.afterOAuthLoginMethod(data);
+                    this.authMethodsConfig.afterOAuthLoginMethod(data);
                 }
             );
     }
 
     public register(form: FormGroup) {
-        this.authConfig.registerUser(form);
+        console.log('will register user ---->', form);
+        this.authMethodsConfig.registerUser(form.value);
     }
 }

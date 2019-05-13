@@ -10,6 +10,13 @@
     width: 100%;
 }
 
-.mobile-full-screen {
-    height: 100%;
+/deep/ .mat-checkbox-label {
+    word-wrap: break-word !important;
+    white-space: normal !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile-full-screen {
+        height: 100%;
+    }
 }

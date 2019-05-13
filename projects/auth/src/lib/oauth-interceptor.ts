@@ -6,7 +6,7 @@ import {
     HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AuthConfig } from './auth-config';
+import { AuthConfig, AuthMethodsConfig } from './auth-config';
 import { OAuthService } from 'angular-oauth2-oidc';
 
 @Injectable()
@@ -15,6 +15,7 @@ export class OAuthInterceptor implements HttpInterceptor {
 
     public constructor(
         private oAuthService: OAuthService,
+        public authMethodsConfig: AuthMethodsConfig,
         @Inject('authConfig') public authConfig: AuthConfig
     ) { /**/ }
 
@@ -28,7 +29,7 @@ export class OAuthInterceptor implements HttpInterceptor {
                 }
                 this.refreshing = true;
                 this.oAuthService.refreshToken().then((data: {[key: string]: any}): void => {
-                    this.authConfig.afterOAuthRefreshMethod(data);
+                    this.authMethodsConfig.afterOAuthRefreshMethod(data);
                     this.refreshing = false;
                 });
             }

@@ -67,20 +67,20 @@ export const signup_form: Array<FormlyFieldConfig> = [
             }
         }
     },
-    {
-        key: 'conditions',
-        type: 'checkbox',
-        templateOptions: {
-            indeterminate: false,
-            hidden: true,
-            label: 'Estoy de acuerdo con todos los <a href="#">términos y condiciones del servicio.</a>',
-            requiredTrue: true
-        },
-        validators: {
-            checked: {
-                expression: (password): boolean => password.value === true,
-                message: 'Debes aceptar los términos y condiciones del servicio'
-            }
-        }
-    }
+    // {
+    //     key: 'conditions',
+    //     type: 'checkbox',
+    //     templateOptions: {
+    //         indeterminate: false,
+    //         hidden: true,
+    //         label: 'Estoy de acuerdo con todos los <a href="#">términos y condiciones del servicio.</a>',
+    //         requiredTrue: true
+    //     },
+    //     validators: {
+    //         checked: {
+    //             expression: (password): boolean => password.value === true,
+    //             message: 'Debes aceptar los términos y condiciones del servicio'
+    //         }
+    //     }
+    // }
 ];
