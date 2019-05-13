@@ -20,6 +20,7 @@ export class AuthConfig {
         reset_password: IAuthRoute;
     };
     public afterOAuthLoginMethod: (data: {[key: string]: any}) => any;
+    public afterOAuthRefreshMethod: (data: {[key: string]: any}) => any;
     public registerUser: (data: FormGroup) => any;
     public main_image_url: string;
 }
