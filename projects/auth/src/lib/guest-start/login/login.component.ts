@@ -31,9 +31,9 @@ export class LoginComponent {
     public fields: Array<DynamicInput>;
 
     public constructor(
-        protected lowercase: LowerCasePipe,
-        private guestStartService: GuestStartService,
-        protected router: Router,
+        public lowercase: LowerCasePipe,
+        public guestStartService: GuestStartService,
+        public router: Router,
         public oAuthService: OAuthService,
         public mediaObserver: MediaObserver
     ) {

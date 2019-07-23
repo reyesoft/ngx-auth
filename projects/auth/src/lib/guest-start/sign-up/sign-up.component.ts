@@ -21,17 +21,20 @@ export class SignUpComponent {
     public form = new FormGroup({});
     public model: { [key: string]: any } = {};
     public fields: Array<FormlyFieldConfig> = signup_form;
-
+    public accepted_conditions = false;
     protected user_login: { email?: string; password?: string } = {};
 
     public constructor(
         public mediaObserver: MediaObserver,
-        protected guestStartService: GuestStartService,
-        protected lowercase: LowerCasePipe,
-        protected router: Router
+        public guestStartService: GuestStartService,
+        public lowercase: LowerCasePipe,
+        public router: Router
     ) {}
 
     public registerUser(): void {
+        if (this.guestStartService.authConfig.need_conditions && !this.accepted_conditions) {
+            return;
+        }
         this.guestStartService.register(this.form);
     }
 }
