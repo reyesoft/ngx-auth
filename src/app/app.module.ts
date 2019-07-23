@@ -54,11 +54,11 @@ export class AppModule {
         this.oAuthService.setStorage(sessionStorage);
         this.oAuthService.tokenEndpoint = 'someurl/' + 'token';
         // The SPA's id. Register SPA with this id at the auth-server
-        this.oAuthService.clientId = 'bitmerang';
+        this.oAuthService.clientId = 'clientId';
         // set the scope for the permissions the client should request
         this.oAuthService.scope = 'openid profile email voucher';
         this.oAuthService.tokenValidationHandler = new JwksValidationHandler();
         // Set a dummy secret
-        this.oAuthService.dummyClientSecret = `1rZKa2N3r5HrwQfZEMHB4IUkXMS4G5tln1kWwz9s2l`;
+        this.oAuthService.dummyClientSecret = `dummyClientSecret`;
     }
 }
