@@ -1,27 +1,98 @@
-# AuthDemo
+# NGX Auth - Reyesoft
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+Front-end authentication library using OAuth.
 
-## Development server
+## Quick start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+0- Before starting, note that this library requires the following packages to be correctly configured in order to work fine:
 
-## Code scaffolding
+- angular-oauth2-oidc
+- ngx-jsonapi
+- ngx-jsonapi-material
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1- Add ngx-auth to your Angular project
 
-## Build
+- Using npm:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`npm install ngx-auth --save`
 
-## Running unit tests
+- Using yarn:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`yarn add ngx-auth`
 
-## Running end-to-end tests
+2- Import AuthModule in your main module (AppModule) and pass configuration using `forRoot` method
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```typescript
+import { AuthModule, AuthConfig, AuthMethodsConfig } from '@reyesoft/ngx-auth';
+...
+AuthModule.forRoot({
+    api: {
+        login_url: { route: environment.AUTHURL + 'some_url' },
+        forgot_password_url: { route: environment.APIURL + 'some_url' },
+        reset_password_url: { route: environment.APIURL + 'some_url' }
+    },
+    routes: {
+        login: { route: 'some_route', query_params: { query: 'some_query_parameter' }},
+        sign_up: { route: 'some_route', query_params: { query: 'some_query_parameter' }},
+        forgot_password: { route: 'some_route', query_params: { query: 'some_query_parameter' }},
+        forgot_password_redirection: { route: 'some_route', query_params: { query: 'some_query_parameter' }},
+        reset_password: { route: 'some_route', query_params: { query: 'some_query_parameter' }}
+    },
+    main_image_url: 'site_logo.svg'
+}),
+...
+```
 
-## Further help
+3- Inject AuthMethodsConfig in the main module constructor (AppModule) and provide your custom methods to the library
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+import { AuthModule, AuthConfig, AuthMethodsConfig } from '@reyesoft/ngx-auth';
+...
+export class AppModule {
+    public constructor(
+        private authMethodsConfig: AuthMethodsConfig
+    ) {
+        this.configNgxAuth();
+    }
+
+    private configNgxAuth() {
+        this.authMethodsConfig.registerUser = your_custom_method_to_register_a_new_user;
+        this.authMethodsConfig.afterOAuthLoginMethod = your_custom_method_to_login_after_fetching_token;
+        this.authMethodsConfig.afterOAuthRefreshMethod = your_custom_method_to_run_after_refreshing_token;
+    }
+...
+```
+
+4- If you want to refresh the access_token automatically using the refresh_token, provide OAuthInterceptor
+
+``` typescript
+import { AuthModule, AuthConfig, AuthMethodsConfig, OAuthInterceptor } from '@reyesoft/ngx-auth';
+...
+{
+    provide: HTTP_INTERCEPTORS,
+    useClass: OAuthInterceptor,
+    multi: true
+},
+...
+```
+
+5- Use the library's authentication components in your Login, Sign-up and Password Reset views
+
+``` typescript
+import { ForgotPasswordComponent, ResetPasswordComponent, GuestStartComponent } from '@reyesoft/ngx-auth';
+...
+const routes: Routes = [
+    {
+        path: 'login',
+        component: GuestStartComponent
+    },
+    {
+        path: 'resetpassword',
+        component: ResetPasswordComponent
+    },
+    {
+        path: 'forgotpassword',
+        component: ForgotPasswordComponent
+    }
+...
+```
