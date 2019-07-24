@@ -1,16 +1,16 @@
-/deep/ mat-tab-group {
+::ng-deep mat-tab-group {
     width: 100% !important;
 }
 
-/deep/ .mat-tab-body-content {
+::ng-deep .mat-tab-body-content {
     overflow: auto !important;
 }
 
-/deep/ .mat-tab-body-wrapper {
+::ng-deep .mat-tab-body-wrapper {
     width: 100%;
 }
 
-/deep/ .mat-checkbox-label {
+::ng-deep .mat-checkbox-label {
     word-wrap: break-word !important;
     white-space: normal !important;
 }
