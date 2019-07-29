@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { AuthConfig } from 'projects/auth/src/lib/auth-config';
+import { AuthConfig, AuthMethodsConfig } from 'projects/auth/src/lib/auth-config';
 import { AuthModule } from 'projects/auth/src/lib/auth.module';
 import { NgModule } from '@angular/core';
 
@@ -25,7 +25,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthModule.forRoot({
         api: {
             login_url: {route: 'aaaaaa'},
-            register_url: {route: 'aaaaaa'},
             forgot_password_url: {route: 'aaaaaa'},
             reset_password_url: {route: 'aaaaaa'},
         },
@@ -36,8 +35,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             forgot_password_redirection: {route: 'aaaaaa'},
             reset_password: {route: 'aaaaaa'},
         },
-        afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('data ----------->', data); },
-        registerUser: (data) => { console.log('data ----------->', data); },
+        // afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('login data ----------->', data); },
+        // afterOAuthRefreshMethod: (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); },
+        // registerUser: (data) => { console.log('data ----------->', data); },
         main_image_url: 'https://es.freelogodesign.org/Content/img/logo-ex-7.png'
     })
   ],
@@ -45,8 +45,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-    public constructor(private oAuthService: OAuthService) {
+    public constructor(
+        private oAuthService: OAuthService,
+        private authMethodsConfig: AuthMethodsConfig,
+    ) {
         this.configOAuth();
+
+        authMethodsConfig.registerUser = (data) => console.log('aaaaaaaaaaaaaaa');
+        authMethodsConfig.afterOAuthLoginMethod = (data: {[key: string]: any}) => { console.log('login data ----------->', data); };
+        authMethodsConfig
+            .afterOAuthRefreshMethod = (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); };
+        console.log('authMethodsConfig --->', authMethodsConfig);
     }
 
     private configOAuth() {
@@ -54,11 +63,11 @@ export class AppModule {
         this.oAuthService.setStorage(sessionStorage);
         this.oAuthService.tokenEndpoint = 'someurl/' + 'token';
         // The SPA's id. Register SPA with this id at the auth-server
-        this.oAuthService.clientId = 'bitmerang';
+        this.oAuthService.clientId = 'clientId';
         // set the scope for the permissions the client should request
         this.oAuthService.scope = 'openid profile email voucher';
         this.oAuthService.tokenValidationHandler = new JwksValidationHandler();
         // Set a dummy secret
-        this.oAuthService.dummyClientSecret = `1rZKa2N3r5HrwQfZEMHB4IUkXMS4G5tln1kWwz9s2l`;
+        this.oAuthService.dummyClientSecret = `dummyClientSecret`;
     }
 }

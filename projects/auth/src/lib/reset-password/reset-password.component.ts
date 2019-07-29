@@ -24,9 +24,9 @@ export class ResetPasswordComponent implements OnInit {
 
     public constructor(
         public mediaObserver: MediaObserver,
-        protected resetPasswordService: ResetPasswordService,
-        protected router: Router,
-        protected guestStartService: GuestStartService,
+        public resetPasswordService: ResetPasswordService,
+        public router: Router,
+        public guestStartService: GuestStartService,
     ) {}
 
     public ngOnInit() {

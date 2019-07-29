@@ -24,6 +24,7 @@ export class SignUpComponent {
     public fields: Array<FormlyFieldConfig> = signup_form;
     private custom_validators = new CustomValidators();
 
+    public accepted_conditions = false;
     protected user_login: { email?: string; password?: string } = {};
 
     public constructor(
@@ -37,6 +38,9 @@ export class SignUpComponent {
     }
 
     public registerUser(): void {
+        if (this.guestStartService.authConfig.need_conditions && !this.accepted_conditions) {
+            return;
+        }
         this.guestStartService.register(this.form);
     }
 

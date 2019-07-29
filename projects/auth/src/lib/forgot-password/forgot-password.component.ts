@@ -25,7 +25,7 @@ export class ForgotPasswordComponent implements OnInit {
 
     public constructor(
         public ngZone: NgZone,
-        protected forgotPasswordService: ForgotPasswordService,
+        public forgotPasswordService: ForgotPasswordService,
         private router: Router,
         public mediaObserver: MediaObserver
     ) {}
