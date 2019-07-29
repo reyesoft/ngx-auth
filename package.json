@@ -1,6 +1,6 @@
 {
   "name": "auth-demo",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -31,7 +31,7 @@
     "angular-oauth2-oidc": "^5.0.2",
     "core-js": "^2.5.4",
     "ngx-jsonapi": "^2.0.2",
-    "ngx-jsonapi-material": "^0.0.22",
+    "ngx-jsonapi-material": "^0.0.39",
     "ngx-uploader": "^7.1.0",
     "rxjs": "~6.3.3",
     "saturn-datepicker": "^7.2.1",
