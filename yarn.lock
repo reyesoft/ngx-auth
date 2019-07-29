@@ -4384,9 +4384,10 @@ ng-packagr@^4.2.0:
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
 
-ngx-jsonapi-material@^0.0.22:
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/ngx-jsonapi-material/-/ngx-jsonapi-material-0.0.22.tgz#a5de1b61f2558c17f3d30482de58dc117604511f"
+ngx-jsonapi-material@^0.0.39:
+  version "0.0.39"
+  resolved "https://registry.yarnpkg.com/ngx-jsonapi-material/-/ngx-jsonapi-material-0.0.39.tgz#68d30219a6bc56193c1eedf67d04da2feaa27bd7"
+  integrity sha512-SWtpHUCjpEsp4Ns380UuUtqYSdFwbhXUoW4J4v8x1Dev1N36r7chvnzqf/cGWrOlPXK9i2jH9j9kYRU3RkDJUw==
   dependencies:
     tslib "^1.9.0"
 
