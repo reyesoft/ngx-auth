@@ -63,6 +63,7 @@ export const signup_form: Array<FormlyFieldConfig> = [
         },
         validation: {
             messages: {
+                NoPassswordMatch: 'Las contraseñas no coinciden',
                 minlength: 'La contraseña es demasiado corta'
             }
         }

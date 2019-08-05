@@ -4525,10 +4525,10 @@ ng-packagr@^5.3.0:
     terser "^4.0.0"
     update-notifier "^3.0.0"
 
-ngx-jsonapi-material@^0.0.38:
-  version "0.0.38"
-  resolved "https://registry.yarnpkg.com/ngx-jsonapi-material/-/ngx-jsonapi-material-0.0.38.tgz#c914a74389e0e9efcd7e21f9963eec35d2b1360d"
-  integrity sha512-1j1a5aWN8g0u0udK9nVinhmXwRX7lo6O2JwK8LcjDEzpxF9pLdKAXd8QZfIX1W6TVZPJBncBFVfp1PaBGAv2Pg==
+ngx-jsonapi-material@^0.0.39:
+  version "0.0.39"
+  resolved "https://registry.yarnpkg.com/ngx-jsonapi-material/-/ngx-jsonapi-material-0.0.39.tgz#68d30219a6bc56193c1eedf67d04da2feaa27bd7"
+  integrity sha512-SWtpHUCjpEsp4Ns380UuUtqYSdFwbhXUoW4J4v8x1Dev1N36r7chvnzqf/cGWrOlPXK9i2jH9j9kYRU3RkDJUw==
   dependencies:
     tslib "^1.9.0"
 
