@@ -44,11 +44,7 @@ export class LoginComponent {
     }
 
     public updateForm(change): void {
-        for (const key in this.model) {
-            if (this.model.hasOwnProperty(key)) {
-                this.user[key] = this.model[key];
-            }
-        }
+        this.user[change.target.type] = change.target.value;
     }
 
     public checkRememberme(event): void {
@@ -56,7 +52,6 @@ export class LoginComponent {
     }
 
     public goLogin(): void {
-        this.user.rememberme = this.model.rememberme;
         // Sending data and password for the token...
         if (this.form.status === 'VALID') {
             this.guestStartService.oAuthLogin(this.user);
