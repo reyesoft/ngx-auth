@@ -29,8 +29,8 @@ export class SignUpComponent {
 
     public constructor(
         public mediaObserver: MediaObserver,
+        public guestStartService: GuestStartService,
         protected formBuilder: FormBuilder,
-        protected guestStartService: GuestStartService,
         protected lowercase: LowerCasePipe,
         protected router: Router
     ) {
