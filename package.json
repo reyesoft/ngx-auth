@@ -1,5 +1,20 @@
 {
   "name": "auth-demo",
+  "sasslintConfig": "resources/.sass-lint.yml",
+  "lint-staged": {
+    "*.ts": [
+      "yarn tslint --fix",
+      "git add"
+    ],
+    "*.{ts,md,scss,sass}": [
+      "yarn prettier:fix",
+      "git add"
+    ],
+    "package.json": [
+      "node ./node_modules/reyesoft-ci/js/scripts/yarn-install.js",
+      "git add yarn.lock"
+    ]
+  },
   "scripts": {
     "npm_pack": "cd dist/auth && npm pack",
     "copy-license": "copy .\\LICENSE .\\dist\\auth",
