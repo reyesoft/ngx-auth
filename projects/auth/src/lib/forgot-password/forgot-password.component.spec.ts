@@ -1,6 +1,6 @@
 // "src/app/guest/forgot-password/forgot-password",
 import { async, fakeAsync, tick, ComponentFixture, TestBed, inject } from '@angular/core/testing';
-import { AuthConfig } from 'projects/auth/src/lib/auth.module';
+import { AuthConfig } from '../auth-config';
 import { ForgotPasswordService } from './forgot-password.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { APP_BASE_HREF } from '@angular/common';
@@ -15,6 +15,22 @@ import { MediaObserver } from '@angular/flex-layout';
 
 export class DummyComponent {}
 
+const auth_config: AuthConfig = {
+    api: {
+        login_url: {route: 'aaaaaa'},
+        forgot_password_url: {route: 'aaaaaa'},
+        reset_password_url: {route: 'aaaaaa'},
+    },
+    routes: {
+        login: {route: 'aaaaaa'},
+        sign_up: {route: 'aaaaaa'},
+        forgot_password: {route: 'aaaaaa'},
+        forgot_password_redirection: {route: 'aaaaaa'},
+        reset_password: {route: 'aaaaaa'},
+    },
+    main_image_url: 'https://es.freelogodesign.org/Content/img/logo-ex-7.png'
+};
+
 function newEvent(eventName: string, bubbles = false, cancelable = false) {
     const evt = document.createEvent('Event'); // MUST be 'CustomEvent'
     evt.initEvent(eventName, bubbles, cancelable);
@@ -23,6 +39,8 @@ function newEvent(eventName: string, bubbles = false, cancelable = false) {
 }
 
 const ForgotPasswordServiceMock = mock(ForgotPasswordService);
+when(ForgotPasswordServiceMock.authConfig).thenReturn(auth_config);
+
 class ObservableMediaMock {
     public constructor() {
         /**/
@@ -45,12 +63,7 @@ describe('ForgotPasswordComponent', () => {
             ],
             declarations: [ForgotPasswordComponent],
             providers: [
-                { provide: AuthConfig, useValue: {
-                    routes: {
-                        login: {route: 'login'},
-                        forgot_password_redirection: {route: 'forgot_password_redirection'}
-                    }
-                }},
+                { provide: AuthConfig, useValue: auth_config},
                 { provide: MediaObserver, useValue: new ObservableMediaMock() },
                 { provide: ForgotPasswordService, useFactory: (): ForgotPasswordService => instance(ForgotPasswordServiceMock) }
             ]
@@ -58,10 +71,10 @@ describe('ForgotPasswordComponent', () => {
     });
 
     beforeEach(
-        fakeAsync(() => {
+        fakeAsync((() => {
             fixture = TestBed.createComponent(ForgotPasswordComponent);
             component = fixture.componentInstance;
-        })
+        }))
     );
 
     it('should create', () => {
