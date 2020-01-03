@@ -204,9 +204,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/flex-layout@^7.0.0-beta.24":
-  version "7.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-7.0.0-beta.24.tgz#ad2fd2b0ff5e49119a6e0bc2052256967ad749af"
+"@angular/flex-layout@^8.0.0-beta.27":
+  version "8.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-8.0.0-beta.27.tgz#a697d5a90e6d04c06b02ee872f88f384d1723f7c"
+  integrity sha512-qmpvQPesU4ZQ56IscwgmVRpK2UnyV+gwvXUql7TMv0QV215hLcHczjGsrKkLfW2By5E7XEyDat9br72uVXcPMw==
   dependencies:
     tslib "^1.7.1"
 
@@ -613,15 +614,17 @@
     tree-kill "1.2.0"
     webpack-sources "1.2.0"
 
-"@ngx-formly/core@^5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@ngx-formly/core/-/core-5.0.4.tgz#bcef2799ef0f917f4772a550fcc6c2627a92fb87"
+"@ngx-formly/core@^5.5.6":
+  version "5.5.7"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/core/-/core-5.5.7.tgz#2fdbf9265b7463605a9a0f8e2eddb24b8922ed95"
+  integrity sha512-TVHcOB0+htcenz78XiNIhGLgnkikfGtt0j2lS8TaYe3ZDwNWpafhwOpCWOf35i0cqi6zX/1/eHWUcRHmaNraCQ==
   dependencies:
     tslib "^1.7.1"
 
-"@ngx-formly/material@^5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@ngx-formly/material/-/material-5.0.4.tgz#1334d6b2d89ab76292b1cfcd7eeaadb0e3f24e32"
+"@ngx-formly/material@^5.5.6":
+  version "5.5.7"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/material/-/material-5.5.7.tgz#39b57b20268bd19a6f2cacffcd5b85c72bc943aa"
+  integrity sha512-vXd+FsMY0OIedy1ytvNFbYFB5Nnmvpw/cc71Zox9YMoRFguXiK1LbpN9/gagxf71zyqB1DTS0EHcKZtde097nA==
   dependencies:
     tslib "^1.9.0"
 
@@ -2983,6 +2986,11 @@ detect-newline@^2.1.0:
 detect-node@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
+
+dexie@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/dexie/-/dexie-2.0.4.tgz#6027a5e05879424e8f9979d8c14e7420f27e3a11"
+  integrity sha512-aQ/s1U2wHxwBKRrt2Z/mwFNHMQWhESerFsMYzE+5P5OsIe5o1kgpFMWkzKTtkvkyyEni6mWr/T4HUJuY9xIHLA==
 
 dezalgo@^1.0.0:
   version "1.0.3"
@@ -6394,12 +6402,6 @@ license-webpack-plugin@2.0.2:
   dependencies:
     webpack-sources "^1.2.0"
 
-lie@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
-  dependencies:
-    immediate "~3.0.5"
-
 lie@~3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/lie/-/lie-3.3.0.tgz#dcf82dee545f46074daf200c7c1c5a08e0f40f6a"
@@ -6516,18 +6518,6 @@ loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
     big.js "^5.2.2"
     emojis-list "^2.0.0"
     json5 "^1.0.1"
-
-localforage-getitems@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/localforage-getitems/-/localforage-getitems-1.4.2.tgz#bddd3e716e7df339dc5a5cc26e2dd1decec76606"
-  dependencies:
-    localforage ">=1.4.0"
-
-localforage@>=1.4.0, localforage@^1.5.2:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.7.3.tgz#0082b3ca9734679e1bd534995bdd3b24cf10f204"
-  dependencies:
-    lie "3.1.1"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -7125,19 +7115,19 @@ ng-packagr@^4.2.0:
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
 
-ngx-jsonapi-material@^0.0.39:
-  version "0.0.39"
-  resolved "https://registry.yarnpkg.com/ngx-jsonapi-material/-/ngx-jsonapi-material-0.0.39.tgz#68d30219a6bc56193c1eedf67d04da2feaa27bd7"
-  integrity sha512-SWtpHUCjpEsp4Ns380UuUtqYSdFwbhXUoW4J4v8x1Dev1N36r7chvnzqf/cGWrOlPXK9i2jH9j9kYRU3RkDJUw==
+ngx-jsonapi-material@^0.22.56:
+  version "0.22.58"
+  resolved "https://registry.yarnpkg.com/ngx-jsonapi-material/-/ngx-jsonapi-material-0.22.58.tgz#ac11b9892ad8c096d6ec49824228cd464c5f18a5"
+  integrity sha512-mhSvl4gQ7HR8SzU2esxfhdDtF0a4R54fHMAWL8s2LGiRo44t6Ly/Suom/gaIt9EJwJIQWm+NdUvtxFtHVjtj4w==
   dependencies:
     tslib "^1.9.0"
 
-ngx-jsonapi@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/ngx-jsonapi/-/ngx-jsonapi-2.0.2.tgz#6bfaf01700053285109b8bc23873e0098be0381c"
+ngx-jsonapi@^2.1.14:
+  version "2.1.14"
+  resolved "https://registry.yarnpkg.com/ngx-jsonapi/-/ngx-jsonapi-2.1.14.tgz#4632a9c81a7adbca3fa25960f73438fc767120d2"
+  integrity sha512-Xc0FxYGwOesytYYa04sW+cBA+lSt23UGc+mbBBWh25yvvK5+OUdjFYuK7S/B96GEpeCURIFw/BO0+Dy1SwA0yA==
   dependencies:
-    localforage "^1.5.2"
-    localforage-getitems "^1.4.2"
+    dexie "^2.0.4"
 
 ngx-uploader@^7.1.0:
   version "7.1.0"
