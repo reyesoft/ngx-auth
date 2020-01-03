@@ -70,10 +70,12 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@auth0/angular-jwt": "^2.1.0",
+    "@ecodev/fab-speed-dial": "^4.0.0",
     "@ngx-formly/core": "^5.5.6",
     "@ngx-formly/material": "^5.5.6",
     "@ngx-translate/core": "^11.0.1",
     "angular-oauth2-oidc": "^5.0.2",
+    "angular2-toaster": "^8.0.0",
     "core-js": "^2.5.4",
     "ngx-jsonapi": "^2.1.14",
     "ngx-jsonapi-material": "^0.22.56",
@@ -84,8 +86,8 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.11.0",
-    "@angular-devkit/build-ng-packagr": "~0.11.0",
+    "@angular-devkit/build-angular": "~0.802.2",
+    "@angular-devkit/build-ng-packagr": "~0.802.2",
     "@angular/cli": "~8.3.21",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
@@ -93,6 +95,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "faker": "^4.1.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "jest": "^21.0.2",
@@ -112,6 +115,7 @@
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
+    "dom-storage": "2.1.0",
     "typescript": "~3.5.3"
   }
 }
