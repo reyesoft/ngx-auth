@@ -6,17 +6,17 @@ Front-end authentication library using OAuth.
 
 0- Before starting, note that this library requires the following packages to be correctly configured in order to work fine:
 
-- angular-oauth2-oidc
-- ngx-jsonapi
-- ngx-jsonapi-material
+*   angular-oauth2-oidc
+*   ngx-jsonapi
+*   ngx-jsonapi-material
 
 1- Add ngx-auth to your Angular project
 
-- Using npm:
+*   Using npm:
 
 `npm install ngx-auth --save`
 
-- Using yarn:
+*   Using yarn:
 
 `yarn add ngx-auth`
 
@@ -65,7 +65,7 @@ export class AppModule {
 
 4- If you want to refresh the access_token automatically using the refresh_token, provide OAuthInterceptor
 
-``` typescript
+```typescript
 import { AuthModule, AuthConfig, AuthMethodsConfig, OAuthInterceptor } from '@reyesoft/ngx-auth';
 ...
 {
@@ -78,7 +78,7 @@ import { AuthModule, AuthConfig, AuthMethodsConfig, OAuthInterceptor } from '@re
 
 5- Use the library's authentication components in your Login, Sign-up and Password Reset views
 
-``` typescript
+```typescript
 import { ForgotPasswordComponent, ResetPasswordComponent, GuestStartComponent } from '@reyesoft/ngx-auth';
 ...
 const routes: Routes = [

@@ -17,7 +17,7 @@ const routes: Routes = [
     },
     {
         path: 'forgotpass',
-        data: { title: 'Forgot password'},
+        data: { title: 'Forgot password' },
         component: ForgotPasswordComponent
     },
     {
@@ -28,7 +28,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
