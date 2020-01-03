@@ -7,8 +7,6 @@ import {GuestStartComponent} from './guest-start/guest-start.component';
 import {OAuthModule, OAuthService} from 'angular-oauth2-oidc';
 
 describe('Ngx-Auth integration test', () => {
-    let login: LoginComponent;
-    let signup: SignUpComponent;
     let guest_start_fixture: ComponentFixture<GuestStartComponent>;
     let guest_start_component: GuestStartComponent;
 
