@@ -17,6 +17,7 @@ export class AuthConfig {
         login_url: IAuthRoute;
         forgot_password_url: IAuthRoute;
         reset_password_url: IAuthRoute;
+        authorization_url?: IAuthRoute;
     };
     public routes: {
         login: IAuthRoute;

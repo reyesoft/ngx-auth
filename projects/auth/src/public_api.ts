@@ -13,5 +13,6 @@ export { GuestStartComponent } from './lib/guest-start/guest-start.component';
 export { GuestStartService } from './lib/guest-start/services/guest-start.service';
 export { LoginComponent } from './lib/guest-start/login/login.component';
 export { OAuthInterceptor } from './lib/oauth-interceptor';
+export { AuthorizationComponent } from './lib/authorization/authorization.component';
 
 export { AuthConfig, AuthMethodsConfig, IAuthRoute } from './lib/auth-config';
