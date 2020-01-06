@@ -22,16 +22,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         }),
         AuthModule.forRoot({
             api: {
-                login_url: { route: 'aaaaaa' },
-                forgot_password_url: { route: 'aaaaaa' },
-                reset_password_url: { route: 'aaaaaa' }
+                login_url: { route: 'login' },
+                forgot_password_url: { route: 'forgotpass' },
+                reset_password_url: { route: 'resetpassword' }
             },
             routes: {
-                login: { route: 'aaaaaa' },
-                sign_up: { route: 'aaaaaa' },
-                forgot_password: { route: 'aaaaaa' },
-                forgot_password_redirection: { route: 'aaaaaa' },
-                reset_password: { route: 'aaaaaa' }
+                login: { route: 'login' },
+                sign_up: { route: 'signup' },
+                forgot_password: { route: 'forgotpass' },
+                forgot_password_redirection: { route: 'login' },
+                reset_password: { route: 'resetpassword' }
             },
             // afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('login data ----------->', data); },
             // afterOAuthRefreshMethod: (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); },
