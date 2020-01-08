@@ -47,7 +47,6 @@ import {AuthorizationModule} from './authorization/authorization.module';
             ]
         }),
         FormlyMaterialModule,
-        AuthorizationModule,
         AuthMaterialModule
     ],
     providers: [

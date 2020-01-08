@@ -6,12 +6,18 @@
         <div fxFlex="80" fxFlex.xs="100" fxLayout="column">
             <auth-formly-form-flex (change)="updateForm($event)" [form]="form" [fields]="fields" [model]="model" fxLayout="column" class="width-100"></auth-formly-form-flex>
             <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px">
-                <button mat-raised-button color="primary" class="width-100" type="submit">Entrar</button>
+                <jam-submit
+                    class="width-100"
+                    submitLabel="Entrar"
+                    submitAppearance="mat-flat-button"
+                    [loading]="user.loading"
+                    [noCancel]="true"
+                    >
+                </jam-submit>
                 <a
                     [routerLink]="guestStartService.authConfig.routes.forgot_password.route"
                     [queryParams]="guestStartService.authConfig.routes.forgot_password.query_params || {}"
-                    style="text-transform: none"
-                    class="md-body-1"
+                    style="text-transform: none" class="md-body-1"
                     >
                     ¿Olvidó su contraseña?
                 </a>

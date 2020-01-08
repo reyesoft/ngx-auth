@@ -19,10 +19,14 @@ export class AuthorizationComponent implements AfterViewInit {
     @ViewChild('form', {static: false}) private form: ElementRef<HTMLFormElement>;
 
     public constructor(
-        private oAuthService: OAuthService, public activatedRoute: ActivatedRoute,
+        private oAuthService: OAuthService,
+        public activatedRoute: ActivatedRoute,
         @Inject('authConfig') public authConfig: AuthConfig
 
     ) {
+        console.log('loaded authorization component');
+        // tslint:disable-next-line:no-debugger
+        debugger;
         if (!this.authConfig.api || !this.authConfig.api.authorization_url || !this.authConfig.api.authorization_url.route) {
             throw new Error(
                'You must provide "forgot_password_url" configuration when importing AuthModule in your application'
@@ -35,6 +39,9 @@ export class AuthorizationComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit() {
+        console.log('ngAfterViewInit authorization component');
+        // tslint:disable-next-line:no-debugger
+        debugger;
         this.submitForm();
     }
 

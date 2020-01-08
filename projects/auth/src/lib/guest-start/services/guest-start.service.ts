@@ -19,6 +19,7 @@ export class GuestStartService {
     ) {}
 
     public oAuthLogin(user): void {
+        user.loading = true;
         if (!this.authMethodsConfig.afterOAuthLoginMethod) {
             throw(new Error('You must provide a login redirection method when importing AuthModule in your application'));
         }
@@ -28,8 +29,12 @@ export class GuestStartService {
             .then(
                 (data: {[key: string]: any}) => {
                     this.authMethodsConfig.afterOAuthLoginMethod(data);
+                    user.loading = false;
                 }
-            );
+            ).catch((error: Error) => {
+                user.loading = false;
+                throw(error);
+            });
     }
 
     public register(form: FormGroup) {

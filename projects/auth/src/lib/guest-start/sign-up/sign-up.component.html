@@ -16,8 +16,13 @@
                 <label style="word-wrap: break-word; white-space: normal;">Estoy de acuerdo con todos los
                 <a href="#">términos y condiciones del servicio.</a></label>
             </mat-checkbox>
-            <div fxLayout="column" style="margin: 50px 0">
-                <button type="submit" [disabled]="!(this.form.valid && this.form.touched)" mat-raised-button color="primary">Registrarse ahora</button>
+            <div fxLayout="column">
+                <!-- @todo: agregar loading -->
+                <jam-submit class="width-100"
+                    submitLabel="Registrarse ahora" submitAppearance="mat-flat-button"
+                    [noCancel]="true"
+                    [disabled]="!(this.form.valid && this.form.touched)"
+                ></jam-submit>
             </div>
         </div>
     </div>
