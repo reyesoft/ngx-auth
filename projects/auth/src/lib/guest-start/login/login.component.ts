@@ -47,10 +47,6 @@ export class LoginComponent {
         this.user[change.target.type] = change.target.value;
     }
 
-    public checkRememberme(event): void {
-        this.user.rememberme = event.checked;
-    }
-
     public goLogin(): void {
         // Sending data and password for the token...
         if (this.form.status === 'VALID') {
