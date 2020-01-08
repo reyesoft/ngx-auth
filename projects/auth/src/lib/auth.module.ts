@@ -22,6 +22,7 @@ import { LowerCasePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthService } from 'angular-oauth2-oidc';
 import {AuthorizationModule} from './authorization/authorization.module';
+import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.module';
 
 @NgModule({
     declarations: [
@@ -43,9 +44,10 @@ import {AuthorizationModule} from './authorization/authorization.module';
         // TODO: update when ngx-jsonapi-material supports it
         FormlyModule.forRoot({
             validationMessages: [
-                { name: 'required', message: 'Este campo es requerido' }
+                {name: 'required', message: 'Este campo es requerido'}
             ]
         }),
+        SocialButtonsModule,
         FormlyMaterialModule,
         AuthMaterialModule
     ],
@@ -62,6 +64,7 @@ import {AuthorizationModule} from './authorization/authorization.module';
         GuestStartComponent,
         ResetPasswordComponent,
         AuthorizationModule,
+        SocialButtonsModule,
         ForgotPasswordComponent
     ]
 })

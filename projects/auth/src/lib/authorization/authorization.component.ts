@@ -22,14 +22,10 @@ export class AuthorizationComponent implements AfterViewInit {
         private oAuthService: OAuthService,
         public activatedRoute: ActivatedRoute,
         @Inject('authConfig') public authConfig: AuthConfig
-
     ) {
-        console.log('loaded authorization component');
-        // tslint:disable-next-line:no-debugger
-        debugger;
         if (!this.authConfig.api || !this.authConfig.api.authorization_url || !this.authConfig.api.authorization_url.route) {
             throw new Error(
-               'You must provide "forgot_password_url" configuration when importing AuthModule in your application'
+               'You must provide "authorization_url" configuration when importing AuthModule in your application'
             );
         }
         this.authorization_url = this.authConfig.api.authorization_url.route;
@@ -39,9 +35,6 @@ export class AuthorizationComponent implements AfterViewInit {
     }
 
     public ngAfterViewInit() {
-        console.log('ngAfterViewInit authorization component');
-        // tslint:disable-next-line:no-debugger
-        debugger;
         this.submitForm();
     }
 
