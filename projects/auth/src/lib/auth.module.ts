@@ -21,6 +21,7 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 import { LowerCasePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthService } from 'angular-oauth2-oidc';
+import {AuthorizationModule} from './authorization/authorization.module';
 
 @NgModule({
     declarations: [
@@ -46,6 +47,7 @@ import { OAuthService } from 'angular-oauth2-oidc';
             ]
         }),
         FormlyMaterialModule,
+        AuthorizationModule,
         AuthMaterialModule
     ],
     providers: [
@@ -60,6 +62,7 @@ import { OAuthService } from 'angular-oauth2-oidc';
         LoginComponent,
         GuestStartComponent,
         ResetPasswordComponent,
+        AuthorizationModule,
         ForgotPasswordComponent
     ]
 })

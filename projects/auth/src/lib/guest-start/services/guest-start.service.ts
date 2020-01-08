@@ -20,7 +20,7 @@ export class GuestStartService {
 
     public oAuthLogin(user): void {
         if (!this.authMethodsConfig.afterOAuthLoginMethod) {
-            throw(new Error('You must provide a login redirection method when importign AuthModule in your application'));
+            throw(new Error('You must provide a login redirection method when importing AuthModule in your application'));
         }
 
         // Sending data and password for the token...
@@ -33,7 +33,6 @@ export class GuestStartService {
     }
 
     public register(form: FormGroup) {
-        console.log('will register user ---->', form);
         this.authMethodsConfig.registerUser(form.value);
     }
 }
