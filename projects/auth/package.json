@@ -1,6 +1,6 @@
 {
   "name": "@reyesoft/ngx-auth",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "peerDependencies": {
     "@angular/animations": "^8.2.14",
     "@angular/cdk": "^8.2.3",
