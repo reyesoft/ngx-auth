@@ -26,6 +26,7 @@
                     fxLayout="column"
                     fxLayoutGap="16px"
                     [socialButtons]="social_buttons"
+                    (buttonClick)="socialLogin($event)"
                     >
                 </auth-social-buttons>
             </div>

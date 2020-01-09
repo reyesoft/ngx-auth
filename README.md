@@ -44,8 +44,8 @@ AuthModule.forRoot({
     main_image_url: 'site_logo.svg',
     need_conditions: false,
     social_buttons: [
-        { key: 'faceboook', color: 'blue', svgIcon: 'facebook', text: 'Iniciar con Facebook' }
-    ];
+        { key: 'facebook', color: 'blue', svgIcon: 'facebook', text: 'Iniciar con Facebook' }
+    ]
 }),
 ...
 ```
