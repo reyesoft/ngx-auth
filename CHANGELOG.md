@@ -4,10 +4,10 @@
 
 ### Added
 
--   Third party authentication support
+*   Third party authentication support
 
 ## 0.0.16
 
 ### Added
 
--   Login with authorization code support
+*   Login with authorization code support
