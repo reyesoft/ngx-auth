@@ -105,3 +105,27 @@ const routes: Routes = [
     }
 ...
 ```
+
+## List of exported classes
+
+### Components
+
+- GuestStartComponent (includes Login and Sign up tabs)
+- ResetPasswordComponent
+- ForgotPasswordComponent
+- AuthorizationComponent
+- SocialButtonsComponent (included in login, but is also exported to be used somewhere else)
+
+### Services
+
+- GuestStartService
+- ForgotPasswordService
+- ResetPasswordService
+
+### Interceptors
+
+- OAuthInterceptor
+
+### Classes
+
+- AuthConfig
