@@ -29,6 +29,9 @@ AuthModule.forRoot({
     api: {
         login_url: { route: environment.AUTHURL + 'some_url' },
         forgot_password_url: { route: environment.APIURL + 'some_url' },
+        authorization_url: { route: environment.APIURL + 'some_url' },
+        auth_code_login: { route: environment.APIURL + 'some_url' },
+        social_login_url: { route: environment.APIURL + 'some_url' },
         reset_password_url: { route: environment.APIURL + 'some_url' }
     },
     routes: {
@@ -38,10 +41,16 @@ AuthModule.forRoot({
         forgot_password_redirection: { route: 'some_route', query_params: { query: 'some_query_parameter' }},
         reset_password: { route: 'some_route', query_params: { query: 'some_query_parameter' }}
     },
-    main_image_url: 'site_logo.svg'
+    main_image_url: 'site_logo.svg',
+    need_conditions: false,
+    social_buttons: [
+        { key: 'facebook', color: 'blue', svgIcon: 'facebook', text: 'Iniciar con Facebook' }
+    ]
 }),
 ...
 ```
+
+**IMPORTANT:** don't forget to register the custom svgIcon used for social button in the MatIconRegistry (https://material.angular.io/components/icon/api#MatIconRegistry)
 
 3- Inject AuthMethodsConfig in the main module constructor (AppModule) and provide your custom methods to the library
 
