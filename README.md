@@ -110,22 +110,22 @@ const routes: Routes = [
 
 ### Components
 
-- GuestStartComponent (includes Login and Sign up tabs)
-- ResetPasswordComponent
-- ForgotPasswordComponent
-- AuthorizationComponent
-- SocialButtonsComponent (included in login, but is also exported to be used somewhere else)
+*   GuestStartComponent (includes Login and Sign up tabs)
+*   ResetPasswordComponent
+*   ForgotPasswordComponent
+*   AuthorizationComponent
+*   SocialButtonsComponent (included in login, but is also exported to be used somewhere else)
 
 ### Services
 
-- GuestStartService
-- ForgotPasswordService
-- ResetPasswordService
+*   GuestStartService
+*   ForgotPasswordService
+*   ResetPasswordService
 
 ### Interceptors
 
-- OAuthInterceptor
+*   OAuthInterceptor
 
 ### Classes
 
-- AuthConfig
+*   AuthConfig
