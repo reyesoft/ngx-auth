@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SocialButton } from './social-button';
+import {MatIconRegistry} from '@angular/material';
 
 @Component({
     selector: 'auth-social-buttons',
