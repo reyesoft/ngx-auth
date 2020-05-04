@@ -95,6 +95,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "dom-storage": "2.1.0",
     "faker": "^4.1.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -115,7 +116,6 @@
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
-    "dom-storage": "2.1.0",
     "typescript": "~3.5.3"
   }
 }
