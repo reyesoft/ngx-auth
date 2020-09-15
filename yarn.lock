@@ -7670,10 +7670,10 @@ ng-packagr@^4.2.0:
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
 
-ngx-uploader@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/ngx-uploader/-/ngx-uploader-7.1.0.tgz#0da19acafb97ad1e22e512a13d9ebae025db85f7"
-  integrity sha512-gPUf04Idd2fMMVMjOQSIx+v9Q9Jdbrxp9UiSnfzIb1JzbfwZih/FtkMYFyNcQ+zNi8dhaotMe412PCvPDHDugg==
+ngx-uploader@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-uploader/-/ngx-uploader-8.0.0.tgz#6707b4bc6840e0a11ae5d1cb0aa5bba530440e26"
+  integrity sha512-9e0ADPvAn8fS11kxy/JEJdukiVnh9QRlKLu82BBiI1LD9DHpftFxENTGf2U4ewbGSnm+F/ewU3eFpKITR8Kq5Q==
   dependencies:
     tslib "^1.9.0"
 
