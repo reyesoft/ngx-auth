@@ -23,6 +23,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { OAuthService } from 'angular-oauth2-oidc';
 import {AuthorizationModule} from './authorization/authorization.module';
 import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.module';
+import {
+    FlexLayoutModule,
+    MediaObserver,
+    LayoutAlignStyleBuilder,
+    LayoutGapStyleBuilder,
+    StyleUtils,
+    StylesheetMap,
+    MediaMarshaller,
+    ɵMatchMedia,
+    BreakPointRegistry,
+    PrintHook,
+    LayoutStyleBuilder,
+    FlexStyleBuilder,
+    ShowHideStyleBuilder,
+    FlexOrderStyleBuilder
+} from "@angular/flex-layout";
+
+
+
 
 @NgModule({
     declarations: [
@@ -39,6 +58,7 @@ import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.m
         RouterModule,
         HttpClientModule,
         JsonapiMaterialModule,
+        FlexLayoutModule,
         FormsModule,
         ReactiveFormsModule,
         // TODO: update when ngx-jsonapi-material supports it
@@ -56,7 +76,20 @@ import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.m
         ResetPasswordService,
         ForgotPasswordService,
         AuthMethodsConfig,
-        LowerCasePipe
+        LowerCasePipe,
+        MediaObserver,
+        LayoutAlignStyleBuilder,
+        LayoutGapStyleBuilder,
+        StyleUtils,
+        StylesheetMap,
+        MediaMarshaller,
+        ɵMatchMedia,
+        BreakPointRegistry,
+        PrintHook,
+        LayoutStyleBuilder,
+        FlexStyleBuilder,
+        ShowHideStyleBuilder,
+        FlexOrderStyleBuilder
     ],
     exports: [
         SignUpComponent,
@@ -69,7 +102,7 @@ import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.m
     ]
 })
 export class AuthModule {
-    static forRoot(authConfig: AuthConfig): ModuleWithProviders {
+    static forRoot(authConfig: AuthConfig): ModuleWithProviders<AuthModule> {
         return {
             ngModule: AuthModule,
             providers: [
