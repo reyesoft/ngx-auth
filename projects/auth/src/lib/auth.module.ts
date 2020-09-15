@@ -38,7 +38,7 @@ import {
     FlexStyleBuilder,
     ShowHideStyleBuilder,
     FlexOrderStyleBuilder
-} from "@angular/flex-layout";
+} from '@angular/flex-layout';
 
 
 
