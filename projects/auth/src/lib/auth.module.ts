@@ -23,6 +23,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { OAuthService } from 'angular-oauth2-oidc';
 import {AuthorizationModule} from './authorization/authorization.module';
 import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.module';
+import {
+    FlexLayoutModule,
+    MediaObserver,
+    LayoutAlignStyleBuilder,
+    LayoutGapStyleBuilder,
+    StyleUtils,
+    StylesheetMap,
+    MediaMarshaller,
+    ɵMatchMedia,
+    BreakPointRegistry,
+    PrintHook,
+    LayoutStyleBuilder,
+    FlexStyleBuilder,
+    ShowHideStyleBuilder,
+    FlexOrderStyleBuilder
+} from '@angular/flex-layout';
 
 @NgModule({
     declarations: [
@@ -38,6 +54,7 @@ import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.m
         CommonModule,
         RouterModule,
         HttpClientModule,
+        FlexLayoutModule,
         JsonapiMaterialModule,
         FormsModule,
         ReactiveFormsModule,
@@ -56,6 +73,19 @@ import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.m
         ResetPasswordService,
         ForgotPasswordService,
         AuthMethodsConfig,
+        MediaObserver,
+        LayoutAlignStyleBuilder,
+        LayoutGapStyleBuilder,
+        StyleUtils,
+        StylesheetMap,
+        MediaMarshaller,
+        ɵMatchMedia,
+        BreakPointRegistry,
+        PrintHook,
+        LayoutStyleBuilder,
+        FlexStyleBuilder,
+        ShowHideStyleBuilder,
+        FlexOrderStyleBuilder,
         LowerCasePipe
     ],
     exports: [
@@ -69,7 +99,7 @@ import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.m
     ]
 })
 export class AuthModule {
-    static forRoot(authConfig: AuthConfig): ModuleWithProviders {
+    static forRoot(authConfig: AuthConfig): ModuleWithProviders<AuthModule> {
         return {
             ngModule: AuthModule,
             providers: [
