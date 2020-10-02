@@ -6,17 +6,17 @@ Front-end authentication library using OAuth.
 
 0- Before starting, note that this library requires the following packages to be correctly configured in order to work fine:
 
-- angular-oauth2-oidc
-- ngx-jsonapi
-- ngx-jsonapi-material
+*   angular-oauth2-oidc
+*   ngx-jsonapi
+*   ngx-jsonapi-material
 
 1- Add ngx-auth to your Angular project
 
-- Using npm:
+*   Using npm:
 
 `npm install ngx-auth --save`
 
-- Using yarn:
+*   Using yarn:
 
 `yarn add ngx-auth`
 
@@ -29,6 +29,9 @@ AuthModule.forRoot({
     api: {
         login_url: { route: environment.AUTHURL + 'some_url' },
         forgot_password_url: { route: environment.APIURL + 'some_url' },
+        authorization_url: { route: environment.APIURL + 'some_url' },
+        auth_code_login: { route: environment.APIURL + 'some_url' },
+        social_login_url: { route: environment.APIURL + 'some_url' },
         reset_password_url: { route: environment.APIURL + 'some_url' }
     },
     routes: {
@@ -38,10 +41,16 @@ AuthModule.forRoot({
         forgot_password_redirection: { route: 'some_route', query_params: { query: 'some_query_parameter' }},
         reset_password: { route: 'some_route', query_params: { query: 'some_query_parameter' }}
     },
-    main_image_url: 'site_logo.svg'
+    main_image_url: 'site_logo.svg',
+    need_conditions: false,
+    social_buttons: [
+        { key: 'facebook', color: 'blue', svgIcon: 'facebook', text: 'Iniciar con Facebook' }
+    ]
 }),
 ...
 ```
+
+**IMPORTANT:** don't forget to register the custom svgIcon used for social button in the MatIconRegistry (https://material.angular.io/components/icon/api#MatIconRegistry)
 
 3- Inject AuthMethodsConfig in the main module constructor (AppModule) and provide your custom methods to the library
 
@@ -65,7 +74,7 @@ export class AppModule {
 
 4- If you want to refresh the access_token automatically using the refresh_token, provide OAuthInterceptor
 
-``` typescript
+```typescript
 import { AuthModule, AuthConfig, AuthMethodsConfig, OAuthInterceptor } from '@reyesoft/ngx-auth';
 ...
 {
@@ -78,7 +87,7 @@ import { AuthModule, AuthConfig, AuthMethodsConfig, OAuthInterceptor } from '@re
 
 5- Use the library's authentication components in your Login, Sign-up and Password Reset views
 
-``` typescript
+```typescript
 import { ForgotPasswordComponent, ResetPasswordComponent, GuestStartComponent } from '@reyesoft/ngx-auth';
 ...
 const routes: Routes = [
@@ -96,3 +105,27 @@ const routes: Routes = [
     }
 ...
 ```
+
+## List of exported classes
+
+### Components
+
+*   GuestStartComponent (includes Login and Sign up tabs)
+*   ResetPasswordComponent
+*   ForgotPasswordComponent
+*   AuthorizationComponent
+*   SocialButtonsComponent (included in login, but is also exported to be used somewhere else)
+
+### Services
+
+*   GuestStartService
+*   ForgotPasswordService
+*   ResetPasswordService
+
+### Interceptors
+
+*   OAuthInterceptor
+
+### Classes
+
+*   AuthConfig

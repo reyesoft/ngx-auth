@@ -17,6 +17,9 @@ export class AuthConfig {
         login_url: IAuthRoute;
         forgot_password_url: IAuthRoute;
         reset_password_url: IAuthRoute;
+        authorization_url?: IAuthRoute;
+        auth_code_login?: IAuthRoute;
+        social_login_url?: IAuthRoute;
     };
     public routes: {
         login: IAuthRoute;
@@ -27,4 +30,5 @@ export class AuthConfig {
     };
     public main_image_url: string;
     public need_conditions ? = false;
+    public social_buttons ? = [];
 }

@@ -1,0 +1,9 @@
+<form class="height-100 width-100" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px" #form ngNoForm [action]="authorization_url" method="post">
+    <img alt="Multinexo: Sistema de gestión online" src="/assets/images/multinexo_logotype_colored.svg">
+
+    <input type="hidden" name="client_id" [value]="client_id">
+    <input type="hidden" name="redirect_uri" [value]="redirect_uri">
+    <input type="hidden" name="token" [value]="token">
+
+    <button mat-raised-button color="primary" type="submit">Continuar</button>
+</form>

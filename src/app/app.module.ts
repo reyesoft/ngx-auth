@@ -9,52 +9,50 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    OAuthModule.forRoot({
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        OAuthModule.forRoot({
             resourceServer: {
                 allowedUrls: [''],
                 sendAccessToken: true
             }
         }),
-    AuthModule.forRoot({
-        api: {
-            login_url: {route: 'aaaaaa'},
-            forgot_password_url: {route: 'aaaaaa'},
-            reset_password_url: {route: 'aaaaaa'},
-        },
-        routes: {
-            login: {route: 'aaaaaa'},
-            sign_up: {route: 'aaaaaa'},
-            forgot_password: {route: 'aaaaaa'},
-            forgot_password_redirection: {route: 'aaaaaa'},
-            reset_password: {route: 'aaaaaa'},
-        },
-        // afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('login data ----------->', data); },
-        // afterOAuthRefreshMethod: (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); },
-        // registerUser: (data) => { console.log('data ----------->', data); },
-        main_image_url: 'https://es.freelogodesign.org/Content/img/logo-ex-7.png'
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+        AuthModule.forRoot({
+            api: {
+                login_url: { route: 'login' },
+                forgot_password_url: { route: 'forgotpass' },
+                reset_password_url: { route: 'resetpassword' }
+            },
+            routes: {
+                login: { route: 'login' },
+                sign_up: { route: 'signup' },
+                forgot_password: { route: 'forgotpass' },
+                forgot_password_redirection: { route: 'login' },
+                reset_password: { route: 'resetpassword' }
+            },
+            // afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('login data ----------->', data); },
+            // afterOAuthRefreshMethod: (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); },
+            // registerUser: (data) => { console.log('data ----------->', data); },
+            main_image_url: 'https://es.freelogodesign.org/Content/img/logo-ex-7.png'
+        })
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
-    public constructor(
-        private oAuthService: OAuthService,
-        private authMethodsConfig: AuthMethodsConfig,
-    ) {
+    public constructor(private oAuthService: OAuthService, private authMethodsConfig: AuthMethodsConfig) {
         this.configOAuth();
 
-        authMethodsConfig.registerUser = (data) => console.log('aaaaaaaaaaaaaaa');
-        authMethodsConfig.afterOAuthLoginMethod = (data: {[key: string]: any}) => { console.log('login data ----------->', data); };
-        authMethodsConfig
-            .afterOAuthRefreshMethod = (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); };
+        authMethodsConfig.registerUser = data => console.log('aaaaaaaaaaaaaaa');
+        authMethodsConfig.afterOAuthLoginMethod = (data: { [key: string]: any }) => {
+            console.log('login data ----------->', data);
+        };
+        authMethodsConfig.afterOAuthRefreshMethod = (data: { [key: string]: any }) => {
+            console.log('refresh data ----------->', data);
+        };
         console.log('authMethodsConfig --->', authMethodsConfig);
     }
 

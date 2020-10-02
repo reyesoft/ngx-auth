@@ -21,6 +21,5 @@ export let login_form_model: Array<DynamicInput> = [
     new TextDynamicInput('password')
         .addTemplateOptions({type: 'password', placeholder: 'Contraseña'})
         .fxFlex(100)
-        .required(),
-    new CheckboxDynamicInput('rememberme').setTemplateOption('label', 'Recuérdame')
+        .required()
 ];

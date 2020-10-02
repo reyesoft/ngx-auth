@@ -21,6 +21,24 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 import { LowerCasePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthService } from 'angular-oauth2-oidc';
+import {AuthorizationModule} from './authorization/authorization.module';
+import {SocialButtonsModule} from './guest-start/social-buttons/social-buttons.module';
+import {
+    FlexLayoutModule,
+    MediaObserver,
+    LayoutAlignStyleBuilder,
+    LayoutGapStyleBuilder,
+    StyleUtils,
+    StylesheetMap,
+    MediaMarshaller,
+    ɵMatchMedia,
+    BreakPointRegistry,
+    PrintHook,
+    LayoutStyleBuilder,
+    FlexStyleBuilder,
+    ShowHideStyleBuilder,
+    FlexOrderStyleBuilder
+} from '@angular/flex-layout';
 
 @NgModule({
     declarations: [
@@ -36,15 +54,17 @@ import { OAuthService } from 'angular-oauth2-oidc';
         CommonModule,
         RouterModule,
         HttpClientModule,
+        FlexLayoutModule,
         JsonapiMaterialModule,
         FormsModule,
         ReactiveFormsModule,
         // TODO: update when ngx-jsonapi-material supports it
         FormlyModule.forRoot({
             validationMessages: [
-                { name: 'required', message: 'Este campo es requerido' }
+                {name: 'required', message: 'Este campo es requerido'}
             ]
         }),
+        SocialButtonsModule,
         FormlyMaterialModule,
         AuthMaterialModule
     ],
@@ -53,6 +73,19 @@ import { OAuthService } from 'angular-oauth2-oidc';
         ResetPasswordService,
         ForgotPasswordService,
         AuthMethodsConfig,
+        MediaObserver,
+        LayoutAlignStyleBuilder,
+        LayoutGapStyleBuilder,
+        StyleUtils,
+        StylesheetMap,
+        MediaMarshaller,
+        ɵMatchMedia,
+        BreakPointRegistry,
+        PrintHook,
+        LayoutStyleBuilder,
+        FlexStyleBuilder,
+        ShowHideStyleBuilder,
+        FlexOrderStyleBuilder,
         LowerCasePipe
     ],
     exports: [
@@ -60,11 +93,13 @@ import { OAuthService } from 'angular-oauth2-oidc';
         LoginComponent,
         GuestStartComponent,
         ResetPasswordComponent,
+        AuthorizationModule,
+        SocialButtonsModule,
         ForgotPasswordComponent
     ]
 })
 export class AuthModule {
-    static forRoot(authConfig: AuthConfig): ModuleWithProviders {
+    static forRoot(authConfig: AuthConfig): ModuleWithProviders<AuthModule> {
         return {
             ngModule: AuthModule,
             providers: [
