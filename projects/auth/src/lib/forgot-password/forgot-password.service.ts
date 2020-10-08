@@ -6,7 +6,7 @@
  */
 
 import { Injectable, Inject } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { AuthConfig } from '../auth-config';
 import { Observable, throwError } from 'rxjs';
 
@@ -24,17 +24,15 @@ export class ForgotPasswordService {
             );
         }
 
-        let body: string;
-
-        for (const query_parameter in query_parameters) {
-            if (query_parameters.hasOwnProperty(query_parameter)) {
-                body = `${(body + '&' || '')}${query_parameter}=${query_parameters[query_parameter]}`;
-            }
+        let email = '';
+        if (query_parameters.email.value) {
+            email = query_parameters.email.value;
         }
+        const body = new HttpParams().set('email', email);
 
         return this.http.post(
             this.authConfig.api.forgot_password_url.route,
-            body,
+            body.toString(),
             {
                 headers: new HttpHeaders('Content-Type: application/x-www-form-urlencoded')
             }
