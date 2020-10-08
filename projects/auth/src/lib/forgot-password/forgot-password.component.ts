@@ -44,7 +44,7 @@ export class ForgotPasswordComponent implements OnInit {
     }
 
     public sendEmail() {
-        this.forgotPasswordService.reset(this.forgotPassForm.controls.email.value).subscribe(res => {
+        this.forgotPasswordService.reset(this.forgotPassForm.controls).subscribe(res => {
             this.ngZone.run(
                 () => this.router.navigate(
                     [this.forgotPasswordService.authConfig.routes.forgot_password_redirection.route],
