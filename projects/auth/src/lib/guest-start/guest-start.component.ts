@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MediaObserver } from '@angular/flex-layout';
 import { AbstractControl } from '@angular/forms';
@@ -11,6 +11,7 @@ import { AbstractControl } from '@angular/forms';
 export class GuestStartComponent implements OnInit {
     public loginForm: FormGroup;
     public errorMessage: string;
+    public notShadow: boolean = false;
     public tab_names = {
         login: 0,
         signup: 1
@@ -37,6 +38,18 @@ export class GuestStartComponent implements OnInit {
 
     public ngOnInit(): void {
         this.buildForm();
+        if (window.innerWidth <= 400) {
+          this.notShadow = true;
+        }
+    }
+
+    @HostListener('window:resize', ['$event'])
+    public onResize(event) {
+      if (event.target.innerWidth <= 400) {
+        this.notShadow = true;
+      } else {
+        this.notShadow = false;
+      }
     }
 
     private buildForm(): void {
