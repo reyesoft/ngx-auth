@@ -26,17 +26,17 @@
 }
 
 @media (min-width: 400px) {
-  .guest-start-container::before,
-  .guest-start-container::after {
-      content: '';
-      display: block;
-      -webkit-box-flex: 1;
-      box-flex: 1;
-      -webkit-flex-grow: 1;
-      flex-grow: 1;
-      height: 24px;
-      min-height: 30px;
-  }
+    .guest-start-container::before,
+    .guest-start-container::after {
+        content: '';
+        display: block;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+        height: 24px;
+        min-height: 30px;
+    }
 }
 
 .width-100 {
@@ -64,4 +64,3 @@
         height: 100%;
     }
 }
-

@@ -11,7 +11,7 @@ import { AbstractControl } from '@angular/forms';
 export class GuestStartComponent implements OnInit {
     public loginForm: FormGroup;
     public errorMessage: string;
-    public notShadow: boolean = false;
+    public notShadow = false;
     public tab_names = {
         login: 0,
         signup: 1
