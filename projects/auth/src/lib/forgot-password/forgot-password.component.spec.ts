@@ -12,6 +12,7 @@ import { mock, instance, when } from 'ts-mockito';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MediaObserver } from '@angular/flex-layout';
+import { GuestStartService } from '../guest-start/services/guest-start.service';
 
 export class DummyComponent {}
 
@@ -63,6 +64,7 @@ describe('ForgotPasswordComponent', () => {
             ],
             declarations: [ForgotPasswordComponent],
             providers: [
+                { provide: GuestStartService, useValue: GuestStartService},
                 { provide: AuthConfig, useValue: auth_config},
                 { provide: MediaObserver, useValue: new ObservableMediaMock() },
                 { provide: ForgotPasswordService, useFactory: (): ForgotPasswordService => instance(ForgotPasswordServiceMock) }
@@ -90,10 +92,8 @@ describe('ForgotPasswordComponent', () => {
             input.nativeElement.value = name;
             const evt = document.createEvent('Event');
             evt.initEvent('input', true, false);
-            fixture.detectChanges();
             tick();
             input.nativeElement.dispatchEvent(evt);
-            fixture.detectChanges();
             tick();
             input.triggerEventHandler('ngModelChange', input.nativeElement.value);
             tick(50);
