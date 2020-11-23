@@ -1,9 +1,9 @@
-<form fxLayout="column" fxLayoutAlign="space-around stretch" (ngSubmit)="registerUser()" style="padding: 40px 0">
-    <div fxLayout="row" fxLayoutAlign="center center" style="margin-bottom: 50px">
-        <img [src]="guestStartService.authConfig.main_image_url" [style.width.%]="!mediaObserver.isActive('xs') ? 70 : 100">
+<form fxLayout="column" fxLayoutAlign="space-around stretch" (ngSubmit)="registerUser()">
+    <div fxLayout="row" fxLayoutAlign="center center" class="width-100 image-guest-start-container">
+        <img [src]="guestStartService.authConfig.main_image_url">
     </div>
     <div fxLayout="row" fxLayoutAlign="center start">
-        <div fxFlex="80" fxFlex.xs="100">
+        <div fxFlex="100">
             <auth-formly-form-flex [form]="form" [fields]="fields" [model]="model" fxLayout="column" class="width-100"></auth-formly-form-flex>
             <mat-checkbox
                 matInput

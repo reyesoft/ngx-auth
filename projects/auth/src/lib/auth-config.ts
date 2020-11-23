@@ -28,6 +28,7 @@ export class AuthConfig {
         forgot_password_redirection: IAuthRoute;
         reset_password: IAuthRoute;
     };
+    public forgot_password_link_class ? = '';
     public main_image_url: string;
     public need_conditions ? = false;
     public social_buttons ? = [];

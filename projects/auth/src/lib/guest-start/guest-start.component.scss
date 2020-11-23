@@ -1,6 +1,6 @@
 ::ng-deep mat-tab-group {
     width: 100% !important;
-
+    border-radius: 4px;
 }
 
 ::ng-deep .mat-tab-body-content {
@@ -25,16 +25,18 @@
     position: relative;
 }
 
-.guest-start-container::before,
-.guest-start-container::after {
-    content: '';
-    display: block;
-    -webkit-box-flex: 1;
-    box-flex: 1;
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    height: 24px;
-    min-height: 30px;
+@media (min-width: 400px) {
+  .guest-start-container::before,
+  .guest-start-container::after {
+      content: '';
+      display: block;
+      -webkit-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+      height: 24px;
+      min-height: 30px;
+  }
 }
 
 .width-100 {
@@ -44,10 +46,13 @@
 .tab-group-container {
     max-width: 500px;
     width: 100%;
-    padding: 24px;
     box-sizing: border-box;
     min-height: 0;
     margin: 0 auto;
+
+    @media (min-width: 400px) {
+        padding: 24px;
+    }
 }
 
 .background-white {
@@ -59,3 +64,4 @@
         height: 100%;
     }
 }
+

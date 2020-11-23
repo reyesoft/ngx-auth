@@ -33,6 +33,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
                 forgot_password_redirection: { route: 'login' },
                 reset_password: { route: 'resetpassword' }
             },
+            social_buttons: [
+              { key: 'facebook', color: 'blue', svgIcon: 'facebook', text: 'Iniciar con Facebook', classes: 'button-secondary' },
+              { key: 'google', color: 'white', svgIcon: 'google', text: 'Iniciar con Google', classes: 'button-secondary' }
+            ],
             // afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('login data ----------->', data); },
             // afterOAuthRefreshMethod: (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); },
             // registerUser: (data) => { console.log('data ----------->', data); },

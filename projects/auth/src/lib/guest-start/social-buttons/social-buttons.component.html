@@ -1,4 +1,4 @@
-<button mat-button *ngFor="let button of socialButtons" (click)="emitButtonClick(button.key)">
+<button mat-button *ngFor="let button of socialButtons" (click)="emitButtonClick(button.key)" [ngClass]="button.classes">
     <mat-icon [svgIcon]="button.svgIcon"></mat-icon>
     <span>{{ button.text }}</span>
 </button>

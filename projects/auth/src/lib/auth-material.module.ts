@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
         MatCheckboxModule,
         MatInputModule,
         MatIconModule,
+        MatCardModule,
         CdkTableModule
     ],
     exports: [
@@ -28,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
         MatCheckboxModule,
         MatInputModule,
         MatIconModule,
+        MatCardModule,
         CdkTableModule
     ],
 })
