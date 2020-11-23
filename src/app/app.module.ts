@@ -33,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
                 forgot_password_redirection: { route: 'login' },
                 reset_password: { route: 'resetpassword' }
             },
+            class_actions_button: 'button-actions',
             social_buttons: [
               { key: 'facebook', color: 'blue', svgIcon: 'facebook', text: 'Iniciar con Facebook', classes: 'button-secondary' },
               { key: 'google', color: 'white', svgIcon: 'google', text: 'Iniciar con Google', classes: 'button-secondary' }
