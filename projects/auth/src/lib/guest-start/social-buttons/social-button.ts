@@ -3,4 +3,5 @@ export class SocialButton {
     color: string;
     text: string;
     svgIcon: string;
+    classes: string;
 }

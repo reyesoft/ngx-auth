@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.19
+
+### Added
+
+*   Change of style of the components the library
+
 ## 0.0.18
 
 ### Added

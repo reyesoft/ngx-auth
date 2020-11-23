@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { MediaObserver } from '@angular/flex-layout';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ForgotPasswordService } from './forgot-password.service';
+import { GuestStartService } from '../guest-start/services/guest-start.service';
 
 @Component({
     selector: 'auth-forgot-password',
@@ -25,9 +26,9 @@ export class ForgotPasswordComponent implements OnInit {
 
     public constructor(
         public ngZone: NgZone,
+        public guestStartService: GuestStartService,
         public forgotPasswordService: ForgotPasswordService,
         private router: Router,
-        public mediaObserver: MediaObserver
     ) {}
 
     public ngOnInit() {

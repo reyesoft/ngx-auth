@@ -33,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
                 forgot_password_redirection: { route: 'login' },
                 reset_password: { route: 'resetpassword' }
             },
+            class_actions_button: 'button-actions',
             // afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('login data ----------->', data); },
             // afterOAuthRefreshMethod: (data: {[key: string]: any}) => { console.log('refresh data ----------->', data); },
             // registerUser: (data) => { console.log('data ----------->', data); },
