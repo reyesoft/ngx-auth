@@ -85,7 +85,6 @@ describe('ForgotPasswordComponent', () => {
         'form should update user',
         fakeAsync(() => {
             // next line handles ExpressionCHangedAfterItHasBeenChackedError
-            spyOn(component.mediaObserver, 'isActive').and.returnValue(false);
             const input = fixture.debugElement.query(By.css('input'));
             const name = 'my Name';
             input.nativeElement.value = name;

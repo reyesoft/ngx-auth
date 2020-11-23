@@ -29,7 +29,6 @@ export class ForgotPasswordComponent implements OnInit {
         public guestStartService: GuestStartService,
         public forgotPasswordService: ForgotPasswordService,
         private router: Router,
-        public mediaObserver: MediaObserver
     ) {}
 
     public ngOnInit() {
