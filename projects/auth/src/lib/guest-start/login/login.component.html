@@ -15,7 +15,7 @@
                     >
                 </jam-submit>
                 <a
-                    [routerLink]="guestStartService.authConfig.routes.forgot_password.route"
+                    routerLink="/{{guestStartService.authConfig.routes.forgot_password.route}}"
                     [queryParams]="guestStartService.authConfig.routes.forgot_password.query_params || {}"
                     style="text-transform: none" class="md-body-1"
                     [ngClass]="guestStartService.authConfig.forgot_password_link_class"

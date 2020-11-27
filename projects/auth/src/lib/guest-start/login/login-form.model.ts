@@ -10,7 +10,6 @@ export let login_form_model: Array<DynamicInput> = [
         .addTemplateOptions({type: 'email', placeholder: 'Correo Electrónico'})
         .setTemplateOption('placeholder', 'Correo Electrónico')
         .fxFlex(100)
-        .setFocus()
         .required()
         .set('email', true)
         .set('validators', { email: { expression: (c): boolean => !c.value || /[^ @]*@[^ @]*/.test(c.value) }})
