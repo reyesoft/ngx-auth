@@ -41,6 +41,13 @@ export class ResetPasswordComponent implements OnInit {
         this.user_login.email = searchObject.queryParams.email;
     }
 
+    public cancel() {
+      this.router.navigate(
+          [this.resetPasswordService.authConfig.routes.login.route],
+          {queryParams: this.resetPasswordService.authConfig.routes.login.query_params}
+      );
+  }
+
     public sendResetPassword() {
         this.user_login.password = this.resetPassForm.controls.password.value;
         this.resetPasswordService.reset(this.resetPassForm.value).subscribe(res => {
