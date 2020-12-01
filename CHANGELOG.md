@@ -2,7 +2,7 @@
 
 ## 0.0.20
 
-### Added
+### Fixed
 
 *   Cancel button returns to login
 
