@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.21
+
+### Added
+
+*   Cypress to library
+
 ## 0.0.20
 
 ### Fixed
