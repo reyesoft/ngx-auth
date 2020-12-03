@@ -3,6 +3,7 @@ import { ResetPasswordComponent } from 'projects/auth/src/lib/reset-password/res
 import { ForgotPasswordComponent } from 'projects/auth/src/lib/forgot-password/forgot-password.component';
 import { GuestStartComponent } from 'projects/auth/src/lib/guest-start/guest-start.component';
 import { Routes, RouterModule } from '@angular/router';
+import { MessageComponent } from 'projects/auth/src/lib/message/message.component';
 
 const routes: Routes = [
     {
@@ -19,6 +20,11 @@ const routes: Routes = [
         path: 'forgotpass',
         data: { title: 'Forgot password' },
         component: ForgotPasswordComponent
+    },
+    {
+        path: 'message',
+        data: { title: 'Message' },
+        component: MessageComponent
     },
     {
         path: '**',

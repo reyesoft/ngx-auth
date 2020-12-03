@@ -1,0 +1,51 @@
+<div style="background-color: red;" class="width-100 auth-wrapper" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card fxFlex.xs="100" fxFlex.md="50" fxFlex="30" [class]="mediaQuery.isActive('xs') ? 'margin-0' : ''" *ngIf="key == 'activation_mail_ok'">
+            <app-guest-message>
+                <div class="text-center">
+                    <span class="mat-headline">Bienvenido</span>
+                    <br>
+                    <span class="mat-body-1"><strong>¡Felicidades</strong> su correo electrónico fue activado satisfactoriamente.</span>
+                </div>
+            </app-guest-message>
+        </mat-card>
+
+        <mat-card fxFlex.xs="100" fxFlex.md="50" fxFlex="30" [class]="mediaQuery.isActive('xs') ? 'margin-0' : ''" *ngIf="messageType == 'errors'">
+            <app-guest-message>
+                <div class="text-center">
+                    <span class="mat-headline text-center">WHOOPS!!</span>
+                    <br>
+                    <span class="mat-subheading-2 text-center"><strong>ERROR 404</strong></span>
+                    <br>
+                    <span class="mat-body-1 text-center">Página no encontrada.</span>
+                </div>
+            </app-guest-message>
+        </mat-card>
+
+        <mat-card fxFlex.xs="100" fxFlex.md="50" fxFlex="30" [class]="mediaQuery.isActive('xs') ? 'margin-0' : ''" *ngIf="messageType == 'invitation_ok'">
+            <app-guest-message buttonLabel="Aceptar invitación">
+                <div class="text-center">
+                    <span class="mat-headline text-center">Aceptar invitación de {{ message }}</span>
+                    <br><br>
+                    <span class="mat-subheading-2 text-center"><strong>{{ message }}</strong> te invita a unirte a su equipo.</span>
+                </div>
+            </app-guest-message>
+        </mat-card>
+
+        <mat-card fxFlex.xs="100" fxFlex.md="50" fxFlex="30" [class]="mediaQuery.isActive('xs') ? 'margin-0' : ''" *ngIf="messageType === 'check_email'">
+            <app-guest-message>
+                <div class="text-center">
+                    <span class="mat-subheading-2 text-center"><strong>Revisa tu correo electrónico</strong> para activar tu cuenta.</span>
+                </div>
+            </app-guest-message>
+        </mat-card>
+
+        <mat-card fxFlex.xs="100" fxFlex.md="50" fxFlex="30" [class]="mediaQuery.isActive('xs') ? 'margin-0' : ''" *ngIf="messageType == 'test_error' || !messageType">
+            <app-guest-message>
+                <div class="text-center">
+                    <span class="mat-headline text-center">WHOOPS!!</span>
+                    <br><br>
+                    <span class="mat-subheading-2 text-center"><strong>{{ message }}</strong></span>
+                </div>
+            </app-guest-message>
+        </mat-card>
+</div>

@@ -1,3 +1,5 @@
+@import '../assets/styles';
+
 ::ng-deep mat-tab-group {
     width: 100% !important;
     border-radius: 4px;
@@ -18,31 +20,6 @@
     white-space: normal !important;
 }
 
-.guest-start-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    position: relative;
-}
-
-@media (min-width: 400px) {
-    .guest-start-container::before,
-    .guest-start-container::after {
-        content: '';
-        display: block;
-        -webkit-box-flex: 1;
-        box-flex: 1;
-        -webkit-flex-grow: 1;
-        flex-grow: 1;
-        height: 24px;
-        min-height: 30px;
-    }
-}
-
-.width-100 {
-    width: 100%;
-}
-
 .tab-group-container {
     max-width: 500px;
     width: 100%;
@@ -53,10 +30,6 @@
     @media (min-width: 400px) {
         padding: 24px;
     }
-}
-
-.background-white {
-    background-color: white;
 }
 
 @media only screen and (max-width: 600px) {
