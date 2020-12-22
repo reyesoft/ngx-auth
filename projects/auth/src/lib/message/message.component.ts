@@ -10,11 +10,11 @@ import { AuthConfig } from '../auth-config';
 import { ActivatedRoute, Router } from '@angular/router';
 
 export interface IMessageModel {
-    [property:string]: string
+    [property: string]: string;
 }
 
 @Component({
-    selector: 'app-message',
+    selector: 'auth-message',
     templateUrl: './message.component.html',
     styleUrls: ['./message.component.scss']
 })
