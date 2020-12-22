@@ -5,36 +5,32 @@
  * distributed without the express permission of Reyesoft
  */
 
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MediaObserver } from '@angular/flex-layout';
-import { GuestMessageComponent } from './guest-message/guest-message.component';
+import { Component, Inject } from '@angular/core';
+import { AuthConfig } from '../auth-config';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { TranslateService } from '@ngx-translate/core';
-import { AuthMethodsConfig } from '../auth-config';
+export interface IMessageModel {
+    [property:string]: string
+}
 
 @Component({
     selector: 'app-message',
-    templateUrl: './message.component.html'
+    templateUrl: './message.component.html',
+    styleUrls: ['./message.component.scss']
 })
 export class MessageComponent {
-    public key: string;
-    public message: string;
-    public messageType: string;
-    public queryParams;
-
-    public constructor(
-        public activatedRoute: ActivatedRoute,
-        public router: Router,
-        public mediaQuery: MediaObserver,
-        private authMethodsConfig: AuthMethodsConfig,
+    public messageModel: IMessageModel;
+    public constructor (
+        @Inject('authConfig') public authConfig: AuthConfig,
+        private route: ActivatedRoute,
+        private router: Router
     ) {
-          activatedRoute.queryParams.subscribe(queryParams => (this.queryParams = queryParams));
-          this.messageType = this.queryParams.type
-          this.message = this.queryParams.message;
+        this.route.data.subscribe((data): void => {
+            this.messageModel = data.messageModel;
+        });
+    }
 
-          if (this.queryParams.token) {
-              this.authMethodsConfig.afterReceivingActivationToken(this.queryParams.token);
-          }
+    public navigateTo(): void {
+        this.router.navigate([this.messageModel.url_redirect]);
     }
 }
