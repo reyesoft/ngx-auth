@@ -8,6 +8,7 @@ export { SignUpComponent } from './lib/guest-start/sign-up/sign-up.component';
 export { ForgotPasswordComponent } from './lib/forgot-password/forgot-password.component';
 export { ForgotPasswordService } from './lib/forgot-password/forgot-password.service';
 export { ResetPasswordComponent } from './lib/reset-password/reset-password.component';
+export { MessageComponent } from './lib/message/message.component';
 export { ResetPasswordService } from './lib/reset-password/reset-password.service';
 export { GuestStartComponent } from './lib/guest-start/guest-start.component';
 export { GuestStartService } from './lib/guest-start/services/guest-start.service';

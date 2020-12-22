@@ -1,0 +1,13 @@
+@import '../assets/styles';
+
+.mat-button {
+    color: white;
+    background-color: #3f51b5;
+}
+
+.button-message-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 24px;
+}

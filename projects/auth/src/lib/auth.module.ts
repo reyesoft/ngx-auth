@@ -39,6 +39,7 @@ import {
     ShowHideStyleBuilder,
     FlexOrderStyleBuilder
 } from '@angular/flex-layout';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
     declarations: [
@@ -47,6 +48,7 @@ import {
         ResetPasswordComponent,
         SignUpComponent,
         LoginComponent,
+        MessageComponent,
         // TODO: remove and import from ngx-jsonapi-material when supported
         AuthFormlyFormFlexLayoutComponent
     ],

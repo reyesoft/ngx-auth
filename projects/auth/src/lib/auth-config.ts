@@ -9,6 +9,7 @@ export interface IAuthRoute {
 export class AuthMethodsConfig {
     public afterOAuthLoginMethod: (data: {[key: string]: any}) => any;
     public afterOAuthRefreshMethod: (data: {[key: string]: any}) => any;
+    public afterReceivingActivationToken: (token: string) => any;
     public registerUser: (data: {[key: string]: any}) => any;
 }
 

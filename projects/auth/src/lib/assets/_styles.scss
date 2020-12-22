@@ -1,0 +1,57 @@
+.main-image-url-container {
+    padding: 24px;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.main-image-url-container img {
+    width: 200px;
+}
+
+.auth-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @media (min-width: 400px) {
+        padding: 24px;
+        min-height: 100vh;
+    }
+}
+
+@media (min-width: 400px) {
+    .auth-wrapper::before,
+    .auth-wrapper::after {
+        content: '';
+        display: block;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+        height: 24px;
+        min-height: 30px;
+    }
+}
+
+.background-white {
+    background-color: white;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.mat-card-style {
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 550px;
+    height: 100vh;
+    margin: 0 auto;
+
+    @media (min-width: 400px) {
+        padding: 24px;
+        min-height: 100%;
+        height: 100%;
+    }
+}
