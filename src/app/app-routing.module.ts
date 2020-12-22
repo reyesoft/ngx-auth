@@ -24,11 +24,8 @@ const routes: Routes = [
     },
     {
         path: 'message',
-        data: {
-          title: 'Message',
-          messageModel: message_model
-        },
-        component: MessageComponent,
+        data: { title: 'Message', messageModel: message_model },
+        component: MessageComponent
     },
     {
         path: '**',
