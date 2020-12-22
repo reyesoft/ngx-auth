@@ -94,6 +94,7 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "cypress": "6.0.1",
     "codelyzer": "~4.5.0",
     "dom-storage": "2.1.0",
     "faker": "^4.1.0",
