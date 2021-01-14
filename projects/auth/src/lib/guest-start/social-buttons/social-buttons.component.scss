@@ -1,3 +1,14 @@
-mat-icon {
-    margin-right: 8px;
+.social-buttons-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.social-buttons-container .mat-button {
+    min-width: auto !important;
+    padding: 0 24px;
+    margin: 0 8px 8px 0 !important;
+    width: 126px;
+    background-color: transparent;
 }
