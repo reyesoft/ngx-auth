@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.22
+
+### Added
+
+*   Added styles to login and register
+
 ## 0.0.21
 
 ### Added

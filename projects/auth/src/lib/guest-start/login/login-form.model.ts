@@ -8,6 +8,7 @@ import {
 export let login_form_model: Array<DynamicInput> = [
     new TextDynamicInput('email')
         .addTemplateOptions({type: 'email', placeholder: 'Correo Electrónico'})
+        .addTemplateOptions({type: 'email', label: 'Correo Electrónico'})
         .setTemplateOption('placeholder', 'Correo Electrónico')
         .fxFlex(100)
         .required()
@@ -19,6 +20,7 @@ export let login_form_model: Array<DynamicInput> = [
         }}),
     new TextDynamicInput('password')
         .addTemplateOptions({type: 'password', placeholder: 'Contraseña'})
+        .addTemplateOptions({type: 'password', label: 'Contraseña'})
         .fxFlex(100)
         .required()
 ];
