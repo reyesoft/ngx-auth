@@ -56,7 +56,7 @@ export class LoginComponent {
     }
 
     public socialLogin(provider: string) {
-        this.guestStartService.socialLogin(provider, this.activatedRoute.snapshot.queryParams.continue || '/companies');
+        this.guestStartService.socialLogin(provider, this.activatedRoute.snapshot.queryParams.continue || '');
     }
 
     public updateForm(change): void {

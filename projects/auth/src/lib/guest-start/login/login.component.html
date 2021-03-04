@@ -14,23 +14,30 @@
                     [noCancel]="true"
                     >
                 </jam-submit>
-                <auth-social-buttons
-                    class="width-100"
-                    fxLayout="column"
-                    fxLayoutGap="16px"
-                    [socialButtons]="social_buttons"
-                    (buttonClick)="socialLogin($event)"
-                    >
-                </auth-social-buttons>
-                <a
-                    routerLink="/{{guestStartService.authConfig.routes.forgot_password.route}}"
-                    [queryParams]="guestStartService.authConfig.routes.forgot_password.query_params || {}"
-                    style="text-transform: none" class="md-body-1"
-                    [ngClass]="guestStartService.authConfig.forgot_password_link_class"
-                    >
-                    ¿Olvidó su contraseña?
-                </a>
             </div>
         </div>
     </div>
 </form>
+
+<div fxLayout="row" fxLayoutAlign="center start">
+    <div fxFlex="100" fxLayout="column">
+        <div class="width-100" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+            <auth-social-buttons
+                class="width-100 social-content"
+                fxLayout="column"
+                fxLayoutGap="16px"
+                [socialButtons]="social_buttons"
+                (buttonClick)="socialLogin($event)"
+                >
+            </auth-social-buttons>
+            <a
+                routerLink="/{{guestStartService.authConfig.routes.forgot_password.route}}"
+                [queryParams]="guestStartService.authConfig.routes.forgot_password.query_params || {}"
+                style="text-transform: none" class="md-body-1"
+                [ngClass]="guestStartService.authConfig.forgot_password_link_class"
+                >
+                ¿Olvidó su contraseña?
+            </a>
+        </div>
+    </div>
+</div>
