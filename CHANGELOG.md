@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.23
+
+### Fixed
+
+*   Clear input when clicking on social buttons
+
 ## 0.0.22
 
 ### Added
