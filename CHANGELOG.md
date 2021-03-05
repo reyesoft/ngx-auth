@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.24
+
+### Added
+
+*   Added activation_email in message component
+
 ## 0.0.23
 
 ### Fixed
