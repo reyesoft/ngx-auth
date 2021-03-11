@@ -11,7 +11,6 @@ import { ResetPasswordService } from './reset-password/reset-password.service';
 import { GuestStartService } from './guest-start/services/guest-start.service';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './guest-start/login/login.component';
-import { SignUpComponent } from './guest-start/sign-up/sign-up.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { GuestStartComponent } from './guest-start/guest-start.component';
 import { CommonModule } from '@angular/common';
@@ -40,13 +39,13 @@ import {
     FlexOrderStyleBuilder
 } from '@angular/flex-layout';
 import { MessageComponent } from './message/message.component';
+import { SignUpModule } from './guest-start/sign-up/sign-up.module';
 
 @NgModule({
     declarations: [
         GuestStartComponent,
         ForgotPasswordComponent,
         ResetPasswordComponent,
-        SignUpComponent,
         LoginComponent,
         MessageComponent,
         // TODO: remove and import from ngx-jsonapi-material when supported
@@ -59,6 +58,7 @@ import { MessageComponent } from './message/message.component';
         FlexLayoutModule,
         JsonapiMaterialModule,
         FormsModule,
+        SignUpModule,
         ReactiveFormsModule,
         // TODO: update when ngx-jsonapi-material supports it
         FormlyModule.forRoot({
@@ -91,7 +91,6 @@ import { MessageComponent } from './message/message.component';
         LowerCasePipe
     ],
     exports: [
-        SignUpComponent,
         LoginComponent,
         GuestStartComponent,
         ResetPasswordComponent,

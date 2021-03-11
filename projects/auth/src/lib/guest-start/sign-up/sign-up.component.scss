@@ -6,8 +6,21 @@
 
 .image-guest-start-container img {
     width: 200px;
+    margin: 0 auto;
+    display: block;
 }
 
 .width-100 {
     width: 100%;
+}
+
+.pill-list {
+    display: block;
+    position: relative;
+    margin-bottom: 1.34375em;
+}
+
+button {
+    width: 100%;
+    text-transform: uppercase;
 }
