@@ -20,11 +20,9 @@ export class SignUpComponent {
     public form = new FormGroup({});
     private custom_validators = new CustomValidators();
 
-    public accepted_conditions: boolean = false;
-
-    public haveCapitalLetter: boolean = false;
-    public haveNumeric: boolean = false;
-    public haveMinLength: boolean = false;
+    public haveCapitalLetter = false;
+    public haveNumeric = false;
+    public haveMinLength = false;
 
     public constructor(
         public mediaObserver: MediaObserver,
@@ -42,26 +40,26 @@ export class SignUpComponent {
                 Validators.required
             ])),
             email: new FormControl('', Validators.compose([
-                Validators.required, 
-                Validators.email, 
+                Validators.required,
+                Validators.email,
                 Validators.pattern('[^ @]*@[^ @]*')
             ])),
             password: new FormControl('', Validators.compose([
-                Validators.required, 
+                Validators.required,
                 Validators.minLength(8),
             ])),
             confirm_password: new FormControl('', Validators.compose([
-                Validators.required, 
+                Validators.required,
                 Validators.minLength(8)
             ]))
         }, {
             validator: this.custom_validators.passwordMatchValidator
-        })
+        });
 
         this.form.controls.password.valueChanges.subscribe((value) => {
             this.validatePassword();
             this.changeDetectorRef.detectChanges();
-        })
+        });
     }
 
     public validateText(): string {
@@ -81,7 +79,7 @@ export class SignUpComponent {
         this.haveCapitalLetter = this.validateRegularExpressions('capitalLetter');
         this.haveNumeric = this.validateRegularExpressions('numeric');
     }
-    
+
     public validateRegularExpressions(type: string) {
         let expression: any;
         switch (type) {
@@ -93,7 +91,7 @@ export class SignUpComponent {
                 break;
         }
 
-        if(expression.exec(this.form.controls.password.value)) {
+        if (expression.exec(this.form.controls.password.value)) {
             return true;
         } else {
             return false;
@@ -101,7 +99,7 @@ export class SignUpComponent {
     }
 
     public registerUser(): void {
-        if(this.form.status === 'INVALID'){
+        if (this.form.status === 'INVALID') {
             return;
         } else {
             this.guestStartService.register(this.form);

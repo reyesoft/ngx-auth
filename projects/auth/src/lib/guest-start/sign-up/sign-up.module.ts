@@ -10,11 +10,11 @@ import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     imports: [
-        CommonModule, 
-        MatFormFieldModule, 
+        CommonModule,
+        MatFormFieldModule,
         MatInputModule,
-        MatChipsModule, 
-        FormsModule, 
+        MatChipsModule,
+        FormsModule,
         ReactiveFormsModule,
         MatButtonModule,
         MatIconModule
