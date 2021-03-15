@@ -31,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
                 sign_up: { route: 'signup' },
                 forgot_password: { route: 'forgotpass' },
                 forgot_password_redirection: { route: 'login' },
+                activation_email_redirect: { route: '/' },
                 reset_password: { route: 'resetpassword' }
             },
             class_actions_button: 'button-actions',

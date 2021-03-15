@@ -6,7 +6,7 @@
  */
 
 import { Component, Inject } from '@angular/core';
-import { AuthConfig } from '../auth-config';
+import { AuthConfig, AuthMethodsConfig } from '../auth-config';
 import { ActivatedRoute, Router } from '@angular/router';
 
 export interface IMessageModel {
@@ -20,13 +20,24 @@ export interface IMessageModel {
 })
 export class MessageComponent {
     public messageModel: IMessageModel;
-    public constructor (
+
+    public constructor(
         @Inject('authConfig') public authConfig: AuthConfig,
+        private authMethodsConfig: AuthMethodsConfig,
         private route: ActivatedRoute,
+        private activatedRoute: ActivatedRoute,
         private router: Router
     ) {
         this.route.data.subscribe((data): void => {
             this.messageModel = data.messageModel;
+        });
+
+        this.activatedRoute.queryParams.subscribe((queryParams): void => {
+            if (queryParams.token) {
+                localStorage.setItem('access_token', queryParams.token); // Save the token in the local storage...
+                this.authMethodsConfig.afterReceivingActivationToken(queryParams.token);
+                this.router.navigate([this.authConfig.routes.activation_email_redirect]);
+            }
         });
     }
 

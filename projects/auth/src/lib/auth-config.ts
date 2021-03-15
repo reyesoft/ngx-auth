@@ -27,6 +27,7 @@ export class AuthConfig {
         sign_up: IAuthRoute;
         forgot_password: IAuthRoute;
         forgot_password_redirection: IAuthRoute;
+        activation_email_redirect: IAuthRoute;
         reset_password: IAuthRoute;
     };
     public class_actions_button ? = '';
