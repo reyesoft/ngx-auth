@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
@@ -8,65 +8,101 @@ import { MediaObserver } from '@angular/flex-layout';
 // Services
 import { GuestStartService } from '../services/guest-start.service';
 
-// ngx-formly
-import { signup_form } from './signup-form.model';
-import { FormlyFieldConfig } from '@ngx-formly/core';
 import { CustomValidators } from 'ngx-jsonapi-material';
 
 @Component({
     selector: 'auth-sign-up',
     templateUrl: './sign-up.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent {
-    // ngx-formly
     public form = new FormGroup({});
-    public model: { [key: string]: any } = {};
-    public fields: Array<FormlyFieldConfig> = signup_form;
     private custom_validators = new CustomValidators();
 
-    public accepted_conditions = false;
-    protected user_login: { email?: string; password?: string } = {};
+    public haveCapitalLetter = false;
+    public haveNumeric = false;
+    public haveMinLength = false;
 
     public constructor(
         public mediaObserver: MediaObserver,
         public guestStartService: GuestStartService,
         protected formBuilder: FormBuilder,
         protected lowercase: LowerCasePipe,
+        private changeDetectorRef: ChangeDetectorRef,
         protected router: Router
     ) {
-        this.form = this.createSignupForm();
+        this.form = this.formBuilder.group({
+            first_name: new FormControl('', Validators.compose([
+                Validators.required
+            ])),
+            last_name: new FormControl('', Validators.compose([
+                Validators.required
+            ])),
+            email: new FormControl('', Validators.compose([
+                Validators.required,
+                Validators.email,
+                Validators.pattern('[^ @]*@[^ @]*')
+            ])),
+            password: new FormControl('', Validators.compose([
+                Validators.required,
+                Validators.minLength(8),
+            ])),
+            confirm_password: new FormControl('', Validators.compose([
+                Validators.required,
+                Validators.minLength(8)
+            ]))
+        }, {
+            validator: this.custom_validators.passwordMatchValidator
+        });
+
+        this.form.controls.password.valueChanges.subscribe((value) => {
+            this.validatePassword();
+            this.changeDetectorRef.detectChanges();
+        });
+    }
+
+    public validateText(): string {
+        if (this.form.controls.first_name.hasError('required') || this.form.controls.last_name.hasError('required')) {
+          return 'Debes completar este campo';
+        }
+    }
+
+    public validateEmail(): string {
+        if (this.form.controls.email.hasError('required')) {
+          return 'Debes completar este campo';
+        }
+        return this.form.controls.email.hasError('email') ? 'El correo no es válido' : '';
+    }
+
+    public validatePassword(): any {
+        this.haveCapitalLetter = this.validateRegularExpressions('capitalLetter');
+        this.haveNumeric = this.validateRegularExpressions('numeric');
+    }
+
+    public validateRegularExpressions(type: string) {
+        let expression: any;
+        switch (type) {
+            case 'capitalLetter':
+                expression = /[A-Z]/;
+                break;
+            case 'numeric':
+                expression = /[0-9]/;
+                break;
+        }
+
+        if (expression.exec(this.form.controls.password.value)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public registerUser(): void {
-        if (this.guestStartService.authConfig.need_conditions && !this.accepted_conditions) {
+        if (this.form.status === 'INVALID') {
             return;
+        } else {
+            this.guestStartService.register(this.form);
         }
-        this.guestStartService.register(this.form);
     }
-
-    private createSignupForm(): FormGroup {
-      return this.formBuilder.group(
-          {
-              email: [
-                  null,
-                  Validators.compose([
-                      Validators.email,
-                      Validators.required
-                  ])
-              ],
-              password: [
-                  null,
-                  Validators.compose([
-                      Validators.required,
-                      Validators.minLength(8)
-                  ])
-              ],
-              confirm_password: [null, Validators.compose([Validators.required])]
-          },
-          {
-              // check whether our password and confirm password match
-              validator: this.custom_validators.passwordMatchValidator
-          });
-  }
 }

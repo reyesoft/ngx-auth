@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.25
+
+### Added
+
+*   Added multiple validate password
+
 ## 0.0.24
 
 ### Added
