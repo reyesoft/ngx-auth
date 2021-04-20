@@ -31,14 +31,33 @@ export class MessageComponent {
         this.route.data.subscribe((data): void => {
             this.messageModel = data.messageModel;
         });
+        this.observerActivatedRoute();
+    }
 
+    private observerActivatedRoute(): void {
         this.activatedRoute.queryParams.subscribe((queryParams): void => {
-            if (queryParams.token) {
-                localStorage.setItem('access_token', queryParams.token); // Save the token in the local storage...
-                this.authMethodsConfig.afterReceivingActivationToken(queryParams.token);
-                this.router.navigate([this.authConfig.routes.activation_email_redirect]);
+            if (queryParams.key && queryParams.token && queryParams.key === 'activation_mail_ok') {
+                this.setToken(queryParams.token);
+
+                return;
             }
+
+            this.setMessage(queryParams.message);
         });
+    }
+
+    private setMessage(message: string): void {
+        if (!message) {
+           return;
+        }
+
+        this.messageModel.message = message;
+    }
+
+    private setToken(token: string): void {
+        localStorage.setItem('access_token', token); // Save the token in the local storage...
+        this.authMethodsConfig.afterReceivingActivationToken(token);
+        this.router.navigate([this.authConfig.routes.activation_email_redirect]);
     }
 
     public navigateTo(): void {

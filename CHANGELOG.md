@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.26
+
+### Added
+
+*   Added support key and message in message component
+
 ## 0.0.25
 
 ### Added
