@@ -47,8 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class AppModule {
     public constructor(private oAuthService: OAuthService, private authMethodsConfig: AuthMethodsConfig) {
         this.configOAuth();
-
-        authMethodsConfig.registerUser = data => console.log('aaaaaaaaaaaaaaa');
+        authMethodsConfig.registerUser = (data) => console.log('aaaaaaaaaaaaaaa');
         authMethodsConfig.afterOAuthLoginMethod = (data: { [key: string]: any }) => {
             console.log('login data ----------->', data);
         };
