@@ -35,6 +35,7 @@ describe('AuthorizationComponent', () => {
                         sign_up: { route: 'signup' },
                         forgot_password: { route: 'forgotpass' },
                         forgot_password_redirection: { route: 'login' },
+                        activation_email_redirect: {route: 'aaaaaaa'},
                         reset_password: { route: 'resetpassword' }
                     },
                     // afterOAuthLoginMethod: (data: {[key: string]: any}) => { console.log('login data ----------->', data); },
