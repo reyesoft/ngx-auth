@@ -1,10 +1,10 @@
 # Changelog
 
-## 0.0.27
+## 0.1.0
 
-### Added
+### Changed
 
--   Added angular 10 to demo
+-   Angular version upgraded to 10
 
 ## 0.0.26
 
