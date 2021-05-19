@@ -16,7 +16,7 @@ export class AuthorizationComponent implements AfterViewInit {
     public token: string;
     public client_id: string;
     public redirect_uri: string;
-    @ViewChild('form', {static: false}) private form: ElementRef<HTMLFormElement>;
+    @ViewChild('form') private form: ElementRef<HTMLFormElement>;
 
     public constructor(
         private oAuthService: OAuthService,

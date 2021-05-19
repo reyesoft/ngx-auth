@@ -31,6 +31,7 @@ describe('Ngx-Auth integration test', () => {
                     sign_up: { route: 'signup' },
                     forgot_password: { route: 'forgotpass' },
                     forgot_password_redirection: { route: 'login' },
+                    activation_email_redirect: {route: 'aaaaaaa'},
                     reset_password: { route: 'resetpassword' }
                   },
                   main_image_url: 'https://es.freelogodesign.org/Content/img/logo-ex-7.png'

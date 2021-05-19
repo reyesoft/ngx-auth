@@ -6,17 +6,17 @@ Front-end authentication library using OAuth.
 
 0- Before starting, note that this library requires the following packages to be correctly configured in order to work fine:
 
-*   angular-oauth2-oidc
-*   ngx-jsonapi
-*   ngx-jsonapi-material
+-   angular-oauth2-oidc
+-   ngx-jsonapi
+-   ngx-jsonapi-material
 
 1- Add ngx-auth to your Angular project
 
-*   Using npm:
+-   Using npm:
 
 `npm install ngx-auth --save`
 
-*   Using yarn:
+-   Using yarn:
 
 `yarn add ngx-auth`
 
@@ -110,22 +110,22 @@ const routes: Routes = [
 
 ### Components
 
-*   GuestStartComponent (includes Login and Sign up tabs)
-*   ResetPasswordComponent
-*   ForgotPasswordComponent
-*   AuthorizationComponent
-*   SocialButtonsComponent (included in login, but is also exported to be used somewhere else)
+-   GuestStartComponent (includes Login and Sign up tabs)
+-   ResetPasswordComponent
+-   ForgotPasswordComponent
+-   AuthorizationComponent
+-   SocialButtonsComponent (included in login, but is also exported to be used somewhere else)
 
 ### Services
 
-*   GuestStartService
-*   ForgotPasswordService
-*   ResetPasswordService
+-   GuestStartService
+-   ForgotPasswordService
+-   ResetPasswordService
 
 ### Interceptors
 
-*   OAuthInterceptor
+-   OAuthInterceptor
 
 ### Classes
 
-*   AuthConfig
+-   AuthConfig
