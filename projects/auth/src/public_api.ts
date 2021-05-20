@@ -14,6 +14,8 @@ export { GuestStartComponent } from './lib/guest-start/guest-start.component';
 export { GuestStartService } from './lib/guest-start/services/guest-start.service';
 export { LoginComponent } from './lib/guest-start/login/login.component';
 export { OAuthInterceptor } from './lib/oauth-interceptor';
+export { PassChipErrorModule } from './lib/pass-chip-error/pass-chip-error.module';
+export { PassChipErrorComponent } from './lib/pass-chip-error/pass-chip-error.component';
 export { AuthorizationComponent } from './lib/authorization/authorization.component';
 export { AuthorizationModule } from './lib/authorization/authorization.module';
 export { SocialButtonsModule } from './lib/guest-start/social-buttons/social-buttons.module';
