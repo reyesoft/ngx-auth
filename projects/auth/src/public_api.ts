@@ -15,5 +15,8 @@ export { GuestStartService } from './lib/guest-start/services/guest-start.servic
 export { LoginComponent } from './lib/guest-start/login/login.component';
 export { OAuthInterceptor } from './lib/oauth-interceptor';
 export { AuthorizationComponent } from './lib/authorization/authorization.component';
+export { AuthorizationModule } from './lib/authorization/authorization.module';
+export { SocialButtonsModule } from './lib/guest-start/social-buttons/social-buttons.module';
+export { SocialButtonsComponent } from './lib/guest-start/social-buttons/social-buttons.component';
 
 export { AuthConfig, AuthMethodsConfig, IAuthRoute } from './lib/auth-config';

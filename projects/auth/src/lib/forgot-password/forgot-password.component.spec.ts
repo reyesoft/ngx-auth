@@ -27,6 +27,7 @@ const auth_config: AuthConfig = {
         sign_up: {route: 'aaaaaa'},
         forgot_password: {route: 'aaaaaa'},
         forgot_password_redirection: {route: 'aaaaaa'},
+        activation_email_redirect: {route: 'aaaaaaa'},
         reset_password: {route: 'aaaaaa'},
     },
     main_image_url: 'https://es.freelogodesign.org/Content/img/logo-ex-7.png'
