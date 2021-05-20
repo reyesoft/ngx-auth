@@ -9,6 +9,7 @@ import { MediaObserver } from '@angular/flex-layout';
 import { GuestStartService } from '../services/guest-start.service';
 
 import { CustomValidators } from 'ngx-jsonapi-material';
+import { PassChipErrorComponent } from '../../pass-chip-error/pass-chip-error.component';
 
 @Component({
     selector: 'auth-sign-up',
@@ -18,11 +19,8 @@ import { CustomValidators } from 'ngx-jsonapi-material';
 })
 export class SignUpComponent {
     public form = new FormGroup({});
+    public onBlurChanges: boolean;
     private custom_validators = new CustomValidators();
-
-    public haveCapitalLetter = false;
-    public haveNumeric = false;
-    public haveMinLength = false;
 
     public constructor(
         public mediaObserver: MediaObserver,
@@ -46,7 +44,7 @@ export class SignUpComponent {
             ])),
             password: new FormControl('', Validators.compose([
                 Validators.required,
-                Validators.minLength(8),
+                PassChipErrorComponent.passwordValidate,
             ])),
             confirm_password: new FormControl('', Validators.compose([
                 Validators.required,
@@ -55,11 +53,10 @@ export class SignUpComponent {
         }, {
             validator: this.custom_validators.passwordMatchValidator
         });
+    }
 
-        this.form.controls.password.valueChanges.subscribe((value) => {
-            this.validatePassword();
-            this.changeDetectorRef.detectChanges();
-        });
+    public onBlur(): void {
+        this.onBlurChanges = true;
     }
 
     public validateText(): string {
@@ -73,29 +70,6 @@ export class SignUpComponent {
           return 'Debes completar este campo';
         }
         return this.form.controls.email.hasError('email') ? 'El correo no es válido' : '';
-    }
-
-    public validatePassword(): any {
-        this.haveCapitalLetter = this.validateRegularExpressions('capitalLetter');
-        this.haveNumeric = this.validateRegularExpressions('numeric');
-    }
-
-    public validateRegularExpressions(type: string) {
-        let expression: any;
-        switch (type) {
-            case 'capitalLetter':
-                expression = /[A-Z]/;
-                break;
-            case 'numeric':
-                expression = /[0-9]/;
-                break;
-        }
-
-        if (expression.exec(this.form.controls.password.value)) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     public registerUser(): void {

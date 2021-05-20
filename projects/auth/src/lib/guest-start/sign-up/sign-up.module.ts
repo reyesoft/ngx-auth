@@ -7,6 +7,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { PassChipErrorModule } from '../../pass-chip-error/pass-chip-error.module';
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
         FormsModule,
         ReactiveFormsModule,
         MatButtonModule,
+        PassChipErrorModule,
         MatIconModule
     ],
     declarations: [SignUpComponent],
