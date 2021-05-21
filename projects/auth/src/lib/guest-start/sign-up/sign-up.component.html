@@ -21,16 +21,11 @@
             </mat-form-field>
             <mat-form-field appearance="outline" style="width: 100%;">
                 <mat-label>Contraseña</mat-label>
-                <input matInput placeholder="Contraseña" [formControl]="form.controls.password" type="password" required>
-                <mat-error *ngIf="form.controls.password.invalid">{{validatePassword()}}</mat-error>
+                <input matInput placeholder="Contraseña" [formControl]="form.controls.password" (blur)="onBlur()" type="password" required>
             </mat-form-field>
 
-            <mat-chip-list class="pill-list">
-                <mat-chip color="{{ !haveCapitalLetter ? 'warn' : 'primary' }}" selected>1 mayúscula</mat-chip>
-                <mat-chip color="{{ !haveNumeric ? 'warn' : 'primary' }}" selected>1 número</mat-chip>
-                <mat-chip color="{{ this.form.controls.password.hasError('required') || this.form.controls.password.hasError('minlength') ? 'warn' : 'primary' }}" selected>Mín. 8 caracteres</mat-chip>
-            </mat-chip-list>
-            
+            <auth-pass-chip-error [onBlur]="onBlurChanges" [passwordControl]="form.controls.password"></auth-pass-chip-error>
+
             <mat-form-field appearance="outline" style="width: 100%;">
                 <mat-label>Repetir contraseña</mat-label>
                 <input matInput placeholder="Repetir contraseña" [formControl]="form.controls.confirm_password" type="password" required>

@@ -76,6 +76,7 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^6.0.0",
     "angular-oauth2-oidc": "10.0.3",
+    "angular-oauth2-oidc-jwks": "9.0.0",
     "angular2-toaster": "^8.0.0",
     "core-js": "^2.5.4",
     "ngx-jsonapi": "^2.1.14",

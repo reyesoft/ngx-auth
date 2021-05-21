@@ -1,0 +1,6 @@
+<mat-chip-list class="pill-list">
+    <mat-chip [ngClass]="!haveCapitalLetter ? 'not-permitted' : 'permitted'" color="{{ !haveCapitalLetter ? 'warn' : 'primary' }}" selected >Una mayúscula</mat-chip>
+    <mat-chip [ngClass]="!haveLowercaseLetter ? 'not-permitted' : 'permitted'" color="{{ !haveLowercaseLetter ? 'warn' : 'primary' }}" selected >Una minúscula</mat-chip>
+    <mat-chip [ngClass]="!haveNumeric ? 'not-permitted' : 'permitted'" color="{{ !haveNumeric ? 'warn' : 'primary' }}" selected >Un número</mat-chip>
+    <mat-chip [ngClass]="!haveMinLength ? 'not-permitted' : 'permitted'" color="{{ !haveMinLength ? 'warn' : 'primary' }}" selected >Mín. 8 caracteres</mat-chip>
+</mat-chip-list>

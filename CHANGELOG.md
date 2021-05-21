@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+### Added
+
+-   Password chip component and animation added
+
 ## 0.1.0
 
 ### Changed

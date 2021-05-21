@@ -3,10 +3,11 @@ import { AuthConfig, AuthMethodsConfig } from 'projects/auth/src/lib/auth-config
 import { AuthModule } from 'projects/auth/src/lib/auth.module';
 import { NgModule } from '@angular/core';
 
-import { OAuthModule, OAuthStorage, OAuthService, JwksValidationHandler } from 'angular-oauth2-oidc';
+import { OAuthModule, OAuthStorage, OAuthService } from 'angular-oauth2-oidc';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
 
 @NgModule({
     declarations: [AppComponent],
