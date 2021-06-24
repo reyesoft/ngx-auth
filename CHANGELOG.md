@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+-   Script of make release fixed
+
 ## 0.1.1
 
 ### Added
