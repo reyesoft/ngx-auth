@@ -4,7 +4,7 @@
 
 ### Security
 
--   Vulnerabilities in security remove. ([#299](https://github.com/reyesoft/ngx-jsonapi/pull/299))
+-   Vulnerabilities in security remove. ([#52](https://github.com/reyesoft/ngx-auth/pull/52))
 
 ## 0.1.1
 
