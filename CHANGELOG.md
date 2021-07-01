@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Security
+
+-   Vulnerabilities in security remove. ([#299](https://github.com/reyesoft/ngx-jsonapi/pull/299))
+
 ## 0.1.1
 
 ### Added
