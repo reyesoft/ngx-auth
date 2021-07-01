@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Security
+
+-   Vulnerabilities in security remove. ([#52](https://github.com/reyesoft/ngx-auth/pull/52))
+
 ## 0.1.1
 
 ### Added
